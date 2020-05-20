@@ -1,0 +1,21 @@
+<h3>Conversation with <%= link_to @conversation_partner[:name_display], profile_path(@conversation_partner[:user_id])  %></h3>
+
+<ul>
+  <% @messages.each do |message| %>
+    <% if message.body %>
+      <li>
+        <h4><%= message.user.profile[:name_display] %></h4>
+        <h5><%= message.created_at %></h5>
+        <p><%= message.body %></p>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= form_for [@conversation, @message] do |f| %>
+  <div class="field">
+    <%= f.text_area :body, placeholder: "Your message" %>
+  </div>
+
+  <%= f.submit "Send" %>
+<% end %>
