@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :conversations, dependent: :destroy
   has_many :messages, dependent: :destroy
+
+  has_many :blocklists, dependent: :destroy
 end

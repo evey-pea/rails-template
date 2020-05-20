@@ -1,13 +1,16 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_profile, only: [:index, :show, :edit, :update, :destroy]
   before_action :set_user_id, only: [:new, :edit,]
   before_action :set_profile, only: [:show]
+  before_action :set_block_lists, only: [:index]
 
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.where.not(user_id: current_user["id"])
+    @excluded = (@blocked_by_list << @blocked_list).flatten!
+    @excluded.push(current_user["id"])
+    @profiles = Profile.where.not(user_id: @excluded)
   end
 
   # GET /profiles/1
@@ -78,6 +81,12 @@ class ProfilesController < ApplicationController
       end
     end
     
+    # Build blocklist to prevent users being seen by current_user
+    def set_block_lists
+      p @blocked_list = Blocklist.where(user_id: current_user.id).to_a.pluck(:blocked_id)
+      p @blocked_by_list = Blocklist.where(blocked_id: current_user.id).to_a.pluck(:user_id)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
       @profile = Profile.find(params[:id])

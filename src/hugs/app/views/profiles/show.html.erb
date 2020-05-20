@@ -53,7 +53,8 @@
     <%= @profile.postcode %>
   </p>
   <div>
-    <%= link_to "Send a message to #{@profile.name_display}", conversations_path(sender_id: current_user.id, receiver_id: @profile.user_id), method: :post %>
+    <%= link_to "Send Message", conversations_path(sender_id: current_user.id, receiver_id: @profile.user_id), method: :post %> |
+    <%= link_to "Block #{@profile.name_display}", blocklists_path(blocked_id: @profile.user_id), method: :post %>
   </div>
 <%end%>
 <%= link_to 'Back', profiles_path %>
