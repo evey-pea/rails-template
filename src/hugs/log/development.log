@@ -18874,3 +18874,338 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 143ms (Views: 48.5ms | ActiveRecord: 20.8ms)
 
 
+Started GET "/conversations/1/messages" for ::1 at 2020-05-21 08:28:00 +1000
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:5
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:7
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:7
+  [1m[36mBlocklist Load (0.4ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1 AND "blocklists"."user_id" = $2[0m  [["blocked_id", 1], ["user_id", 2]]
+  ↳ app/controllers/messages_controller.rb:35
+  [1m[36mMessage Update All (0.7ms)[0m  [1m[33mUPDATE "messages" SET "read" = TRUE WHERE "messages"."conversation_id" = $1 AND (user_id != 1 AND read = FALSE)[0m  [["conversation_id", 1]]
+  ↳ app/controllers/messages_controller.rb:14
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+  ↳ app/views/messages/index.html.erb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  Rendered messages/index.html.erb within layouts/application (34.1ms)
+  Rendered layouts/_account_bar.html.erb (1.4ms)
+  Rendered layouts/_nav_bar.html.erb (0.9ms)
+Completed 200 OK in 478ms (Views: 282.1ms | ActiveRecord: 29.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-21 08:28:04 +1000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VoAmVq4ZqY7hDw9749N+yegQiVJMl2bpZKPw6khfGL8ou21TN+1oo1gMMWQq2QuuKtaoDIoNhaBI/4plC8R9vA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-21 08:28:04 +1000
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-21 08:28:04 +1000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_account_bar.html.erb (1.0ms)
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-21 08:28:09 +1000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"s1kzmoj7khQMS4y7AldDUzbVAaZaAmkKwlPXwv6ONNCKPMeBzXK/1Crf08gL5BrGCzLMblkiBJb9kqq7XCpmqA==", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test1@test.com"], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 180ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-21 08:28:10 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:86
+  [1m[36mBlocklist Load (0.2ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:87
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" NOT IN ($1, $2)[0m  [["user_id", 1], ["user_id", 2]]
+  ↳ app/views/profiles/index.html.erb:3
+  Rendered profiles/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_account_bar.html.erb (0.9ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 43ms (Views: 31.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/blocklists" for ::1 at 2020-05-21 08:28:13 +1000
+Processing by BlocklistsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlocklist Load (0.2ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/blocklists_controller.rb:6
+  Rendering blocklists/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/blocklists/index.html.erb:22
+  Rendered blocklists/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_account_bar.html.erb (1.3ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/blocklists/9" for ::1 at 2020-05-21 08:28:16 +1000
+Processing by BlocklistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KPG3B5+MCsR1YF0/uPZTiL1NRBJDQ30NlZ3twS4nVsNMJLnmNMp6DkGhqhwLreiDop2wfaUc/Cyvr6joziC2wA==", "id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT  "blocklists".* FROM "blocklists" WHERE "blocklists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/blocklists_controller.rb:32
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/blocklists_controller.rb:21
+  [1m[36mBlocklist Destroy (0.5ms)[0m  [1m[31mDELETE FROM "blocklists" WHERE "blocklists"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/blocklists_controller.rb:21
+  [1m[35m (68.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/blocklists_controller.rb:21
+Redirected to http://localhost:3000/profiles
+Completed 302 Found in 78ms (ActiveRecord: 69.5ms)
+
+
+Started GET "/profiles" for ::1 at 2020-05-21 08:28:16 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:86
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:87
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" != $1[0m  [["user_id", 2]]
+  ↳ app/views/profiles/index.html.erb:3
+  Rendered profiles/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_account_bar.html.erb (1.5ms)
+  Rendered layouts/_nav_bar.html.erb (0.8ms)
+Completed 200 OK in 78ms (Views: 35.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/blocklists" for ::1 at 2020-05-21 09:16:01 +1000
+Processing by BlocklistsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mBlocklist Load (0.4ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/blocklists_controller.rb:6
+  Rendering blocklists/index.html.erb within layouts/application
+  Rendered blocklists/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+  Rendered layouts/_nav_bar.html.erb (0.5ms)
+Completed 200 OK in 37ms (Views: 30.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/conversations" for ::1 at 2020-05-21 09:16:03 +1000
+Processing by ConversationsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mConversation Load (1.8ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 2 OR receiver_id = 2)[0m
+  ↳ app/views/conversations/index.html.erb:4
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/conversation.rb:13
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/conversations/index.html.erb:6
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "messages" WHERE "messages"."conversation_id" = $1 AND (user_id != 2 AND read = FALSE)[0m  [["conversation_id", 1]]
+  ↳ app/models/conversation.rb:17
+  Rendered conversations/index.html.erb within layouts/application (26.0ms)
+  Rendered layouts/_account_bar.html.erb (1.6ms)
+  Rendered layouts/_nav_bar.html.erb (1.0ms)
+Completed 200 OK in 101ms (Views: 88.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/conversations/1/messages" for ::1 at 2020-05-21 09:16:05 +1000
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mConversation Load (0.8ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:5
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:7
+  [1m[36mProfile Load (1.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:7
+  [1m[36mBlocklist Load (1.6ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1 AND "blocklists"."user_id" = $2[0m  [["blocked_id", 2], ["user_id", 1]]
+  ↳ app/controllers/messages_controller.rb:35
+  [1m[36mMessage Update All (0.9ms)[0m  [1m[33mUPDATE "messages" SET "read" = TRUE WHERE "messages"."conversation_id" = $1 AND (user_id != 2 AND read = FALSE)[0m  [["conversation_id", 1]]
+  ↳ app/controllers/messages_controller.rb:14
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 1]]
+  ↳ app/views/messages/index.html.erb:9
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  Rendered messages/index.html.erb within layouts/application (88.5ms)
+  Rendered layouts/_account_bar.html.erb (1.2ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 156ms (Views: 119.6ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/profiles" for ::1 at 2020-05-21 09:16:10 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mBlocklist Load (0.5ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:86
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:87
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" != $1[0m  [["user_id", 2]]
+  ↳ app/views/profiles/index.html.erb:3
+  Rendered profiles/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_account_bar.html.erb (1.0ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 55ms (Views: 38.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/profiles" for ::1 at 2020-05-21 09:20:09 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:86
+  [1m[36mBlocklist Load (0.2ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:87
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" != $1[0m  [["user_id", 2]]
+  ↳ app/views/profiles/index.html.erb:12
+  Rendered profiles/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_account_bar.html.erb (1.1ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 56ms (Views: 43.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/profiles" for ::1 at 2020-05-21 09:21:01 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mBlocklist Load (0.5ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:86
+  [1m[36mBlocklist Load (0.4ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:87
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" != $1[0m  [["user_id", 2]]
+  ↳ app/views/profiles/index.html.erb:14
+  Rendered profiles/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_account_bar.html.erb (0.6ms)
+  Rendered layouts/_nav_bar.html.erb (0.5ms)
+Completed 200 OK in 114ms (Views: 101.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/profiles" for ::1 at 2020-05-21 09:21:34 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mBlocklist Load (0.5ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:86
+  [1m[36mBlocklist Load (0.4ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:87
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" != $1[0m  [["user_id", 2]]
+  ↳ app/views/profiles/index.html.erb:14
+  Rendered profiles/index.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_account_bar.html.erb (1.1ms)
+  Rendered layouts/_nav_bar.html.erb (1.3ms)
+Completed 200 OK in 68ms (Views: 52.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/profiles" for ::1 at 2020-05-21 09:22:02 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:77
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mBlocklist Load (0.2ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:86
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 2]]
+  ↳ app/controllers/profiles_controller.rb:87
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" != $1[0m  [["user_id", 2]]
+  ↳ app/views/profiles/index.html.erb:14
+  Rendered profiles/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+  Rendered layouts/_nav_bar.html.erb (0.8ms)
+Completed 200 OK in 44ms (Views: 36.7ms | ActiveRecord: 1.8ms)
+
+

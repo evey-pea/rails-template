@@ -1,13 +1,28 @@
 <p id="notice"><%= notice %></p>
 <h1>All huggers</h1>
-<% @profiles.each do |profile| %>
-  <div class="card">
-    <%= link_to profile do %>
-      <%= profile.name_display %>
-    <% end %>
-    <%= profile.description %>
-    <%= profile.suburb %>
-    <%= profile.state %>
-    <%= profile.postcode %>
-  </div>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>About</th>
+      <th>Suburb</th>
+      <th>State</th>
+      <th>Postcode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= link_to profile do %>
+            <%= profile.name_display %>
+          <% end %>
+        </td>
+        <td><%= profile.description %></td>
+        <td><%= profile.suburb %></td>
+        <td><%= profile.state %></td>
+        <td><%= profile.postcode %></td>
+      </div>
+    </tr>
+  <% end %>
+</tbody>
+</table>
