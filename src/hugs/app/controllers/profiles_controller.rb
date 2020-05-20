@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = Profile.where.not(user_id: current_user["id"])
   end
 
   # GET /profiles/1
