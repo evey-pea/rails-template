@@ -1,5 +1,10 @@
-<h3>Conversation with <%= link_to @conversation_partner[:name_display], profile_path(@conversation_partner[:user_id])  %></h3>
-
+<h3>Conversation with 
+  <% if @blocked %>
+    <%= @conversation_partner[:name_display]%>
+  <% else %>
+    <%= link_to @conversation_partner[:name_display], profile_path(@conversation_partner[:user_id])  %>
+  <% end %>
+</h3>
 <ul>
   <% @messages.each do |message| %>
     <% if message.body %>
@@ -11,11 +16,13 @@
     <% end %>
   <% end %>
 </ul>
-
-<%= form_for [@conversation, @message] do |f| %>
-  <div class="field">
-    <%= f.text_area :body, placeholder: "Your message" %>
-  </div>
-
-  <%= f.submit "Send" %>
+<% if @blocked %>
+  <h3>This conversation has ceased</h3>
+<% else %>
+  <%= form_for [@conversation, @message] do |f| %>
+    <div class="field">
+      <%= f.text_area :body, placeholder: "Your message" %>
+    </div>
+    <%= f.submit "Send" %>
+  <% end %>
 <% end %>

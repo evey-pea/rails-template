@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
+
+  # Blocklist routing
+  resources :blocklists, only: [:index, :create, :destroy]
 end

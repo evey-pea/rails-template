@@ -1,0 +1,35 @@
+<h2>Users blocked by you</h2>
+<% if @blocklist.empty? %>
+  <h3>No users are currently blocked by you</h3>
+<% else %>
+  <table>
+    <thead>
+      <th>
+        User
+      </th>
+      <th>
+        Blocked
+      </th>
+      <th>
+        Remove Block
+      </th>
+    </thead>
+    <tbody>
+      <% for block in @blocklist do %>
+        <tr>
+          <% user_profile = Profile.where(user_id: block.blocked_id) %>
+          <td>
+            <%= user_profile[0][:name_display] %>
+          </td>
+          <td>
+            <%= user_profile[0][:created_at] %>
+          </td>
+          <td>
+            <% confirm_message = "Are you sure that you wish to unblock #{user_profile[0][:name_display]}?" %>
+            <%= link_to 'Unblock', blocklist_path(block), method: :delete, data: { confirm:  confirm_message } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
