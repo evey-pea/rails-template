@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+<h2>
+  <%= @profile.name_display %>
+</h2>
+<% if @profile.id == current_user["id"] %>
+  <%= link_to 'Edit my profile', edit_profile_path(@profile) %>
+<% end %>
+<h3>About me</h3>
+<p>
+  <%= @profile.description %>
+</p>
+<p>
+  <% if @profile.id == current_user["id"] %>
+    <strong>Name first:</strong>
+    <%= @profile.name_first %>
+  </p>
+  <p>
+    <strong>Name second:</strong>
+    <%= @profile.name_second %>
+  </p>
+  <p>
+    <strong>Street number:</strong>
+    <%= @profile.street_number %>
+  </p>
+  <p>
+    <strong>Road:</strong>
+    <%= @profile.road %>
+  </p>
+  <p>
+    <strong>Suburb:</strong>
+    <%= @profile.suburb %>
+  </p>
+  <p>
+    <strong>City:</strong>
+    <%= @profile.city %>
+  </p>
+  <p>
+    <strong>State:</strong>
+    <%= @profile.state %>
+  </p>
+  <p>
+    <strong>Postcode:</strong>
+    <%= @profile.postcode %>
+  </p>
+  <p>
+    <strong>Country:</strong>
+    <%= @profile.country %>
+  </p>
+<% else %>
+  <p>
+    <%= @profile.suburb %>
+    <%= @profile.state %>
+    <%= @profile.postcode %>
+  </p>
+<%end%>
+<%= link_to 'Back', profiles_path %>

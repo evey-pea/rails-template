@@ -1,0 +1,64 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+      <ul>
+        <% profile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% profile.user_id = @user_id %>
+  <div class="field ">
+    <%= form.label :user_id, style: 'display:none' %>
+    <%= form.text_field :user_id, style: 'display:none' %>
+  </div>
+  <div class="field">
+    <%= form.label :name_display, "Display name" %>
+    <%= form.text_field :name_display %>
+  </div>
+  <div class="field">
+    <%= form.label :description, "About me" %>
+    <%= form.text_area :description %>
+  </div>
+  <div class="field">
+    <%= form.label :name_first, "First name" %>
+    <%= form.text_field :name_first %>
+  </div>
+  <div class="field">
+    <%= form.label :name_second, "Last name" %>
+    <%= form.text_field :name_second %>
+  </div>
+  <div class="field">
+    <%= form.label :street_number, "House/Unit number" %>
+    <%= form.text_field :street_number %>
+  </div>
+  <div class="field">
+    <%= form.label :road, "Street/Road name" %>
+    <%= form.text_field :road %>
+  </div>
+  <div class="field">
+    <%= form.label :suburb %>
+    <%= form.text_field :suburb %>
+  </div>
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+  <div class="field">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode %>
+  </div>
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
