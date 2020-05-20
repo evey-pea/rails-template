@@ -1,0 +1,8 @@
+<h1>Editing Profile</h1>
+
+<%= link_to 'Show my Profile', @profile %> |
+<%= link_to 'Delete my profile', @profile, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%= render 'form', profile: @profile %>
+
+<%= link_to 'Cancel', profiles_path %> 

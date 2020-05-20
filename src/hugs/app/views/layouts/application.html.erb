@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hugs</title>
+    <title>Hugs for everyone!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= render 'layouts/devise_alerts' %>
+    <h1>Hugs for everyone!</h1>
+    <%= render 'layouts/account_bar' %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/nav_bar' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
