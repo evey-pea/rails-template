@@ -1,8 +1,9 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user_profile, only: [:index, :show, :edit, :update, :destroy]
-  before_action :set_user_id, only: [:new, :edit,]
+  before_action :set_user_id, only: [:new, :edit]
   before_action :set_profile, only: [:show]
+  before_action :profile_distance, only: [:show]
   before_action :set_block_lists, only: [:index]
 
   # GET /profiles
@@ -34,7 +35,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to @profile, notice: "Profile was successfully created." }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -48,7 +49,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to @profile, notice: "Profile was successfully updated." }
         format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }
@@ -62,38 +63,48 @@ class ProfilesController < ApplicationController
   def destroy
     @profile.destroy
     respond_to do |format|
-      format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
+      format.html { redirect_to profiles_url, notice: "Profile was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
-    # Used for setting user id instance variable for params
-    def set_user_id
-      @user_id = current_user["id"]
-    end
-    # Redirects user to profile creation page if no profile for user exists
-    def set_user_profile
-      if User.find(current_user["id"]).profile == nil
-        redirect_to new_profile_path
-      else
-        @profile = Profile.find(current_user["id"])
-      end
-    end
-    
-    # Build blocklist to prevent users being seen by current_user
-    def set_block_lists
-      p @blocked_list = Blocklist.where(user_id: current_user.id).to_a.pluck(:blocked_id)
-      p @blocked_by_list = Blocklist.where(blocked_id: current_user.id).to_a.pluck(:user_id)
-    end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @profile = Profile.find(params[:id])
-    end
+  # Used for setting user id instance variable for params
+  def set_user_id
+    @user_id = current_user["id"]
+  end
 
-    # Only allow a list of trusted parameters through.
-    def profile_params
-      params.require(:profile).permit(:user_id, :name_first, :name_second, :name_display, :description, :street_number, :road, :suburb, :city, :state, :postcode, :country)
+  # Redirects user to profile creation page if no profile for user exists
+  def set_user_profile
+    if User.find(current_user["id"]).profile == nil
+      redirect_to new_profile_path
+    else
+      @profile = Profile.find(current_user["id"])
     end
+  end
+
+  # Build blocklist to prevent users being seen by current_user
+  def set_block_lists
+    p @blocked_list = Blocklist.where(user_id: current_user.id).to_a.pluck(:blocked_id)
+    p @blocked_by_list = Blocklist.where(blocked_id: current_user.id).to_a.pluck(:user_id)
+  end
+
+  def profile_coords(profile)
+    return [profile.latitude, profile.longitude]
+  end
+
+  def profile_distance
+    @distance = "#{current_user.profile.distance_to([@profile.latitude, @profile.longitude]).round(1)} km"
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def profile_params
+    params.require(:profile).permit(:user_id, :name_first, :name_second, :name_display, :description, :street_number, :road, :suburb, :city, :state, :postcode, :country)
+  end
 end
