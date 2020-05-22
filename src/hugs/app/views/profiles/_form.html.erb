@@ -36,11 +36,11 @@
   </div>
   <div class="field">
     <%= form.label :road, "Street/Road name" %>
-    <%= form.text_field :road %>
+    <%= form.text_field :road, required: :true  %>
   </div>
   <div class="field">
     <%= form.label :suburb %>
-    <%= form.text_field :suburb %>
+    <%= form.text_field :suburb, required: :true %>
   </div>
   <div class="field">
     <%= form.label :city %>
@@ -48,11 +48,11 @@
   </div>
   <div class="field">
     <%= form.label :state %>
-    <%= form.text_field :state %>
+    <%= form.text_field :state, required: :true %>
   </div>
   <div class="field">
     <%= form.label :postcode %>
-    <%= form.text_field :postcode %>
+    <%= form.text_field :postcode, required: :true %>
   </div>
   <div class="field">
     <%= form.label :country %>

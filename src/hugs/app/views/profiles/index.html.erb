@@ -5,6 +5,7 @@
     <tr>
       <th>User</th>
       <th>About</th>
+      <th>Distance</th>
       <th>Suburb</th>
       <th>State</th>
       <th>Postcode</th>
@@ -18,6 +19,10 @@
           <% end %>
         </td>
         <td><%= profile.description %></td>
+        <td>
+          <% profile_coords = [profile.latitude, profile.longitude] %>
+          <%= current_user.profile.distance_to(profile_coords).round(1) %> km
+        </td>
         <td><%= profile.suburb %></td>
         <td><%= profile.state %></td>
         <td><%= profile.postcode %></td>
