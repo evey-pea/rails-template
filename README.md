@@ -25,35 +25,34 @@ This is a problem that will provide a unique marketplace opportunity for this to
 
 ---
 
-- ["Hugs" Market Place](#hugs-market-place)
-  - [External Links](#external-links)
-  - [Purpose](#purpose)
-    - [Why is the problem identified a problem that needs solving?](#why-is-the-problem-identified-a-problem-that-needs-solving)
-  - [Documentation](#documentation)
-    - [High-level Components (abstractions)](#high-level-components-abstractions)
-    - [Third party services](#third-party-services)
-      - [Site deployment](#site-deployment)
-      - [Geocoding Services: Google Maps API with Geocoder Rails Gem](#geocoding-services-google-maps-api-with-geocoder-rails-gem)
-      - [Image content storage: Amazon S3 Bucket](#image-content-storage-amazon-s3-bucket)
-    - [Models Relationships and Database Relations](#models-relationships-and-database-relations)
-      - [User model](#user-model)
-        - [User sub-model: Blocklist](#user-sub-model-blocklist)
-      - [Profile model and data](#profile-model-and-data)
-        - [Profile Picture](#profile-picture)
-        - [Geospatial Data](#geospatial-data)
-      - [Hug Model and Data](#hug-model-and-data)
-      - [User to User Messaging](#user-to-user-messaging)
-        - [Conversation Model and Data](#conversation-model-and-data)
-        - [Messages Model and Data](#messages-model-and-data)
-    - [Database ERD and Schema Implementation](#database-erd-and-schema-implementation)
-      - [Application database ERD](#application-database-erd)
-      - [Schema Implementation](#schema-implementation)
-    - [User Stories](#user-stories)
-    - [UI Wireframes](#ui-wireframes)
-    - [Project Planning and Tracking](#project-planning-and-tracking)
 
 ## Documentation
 
+- [External Links](#external-links)
+- [Purpose](#purpose)
+  - [Why is the problem identified a problem that needs solving?](#why-is-the-problem-identified-a-problem-that-needs-solving)
+- [Documentation](#documentation)
+  - [High-level Components (abstractions)](#high-level-components-abstractions)
+  - [Third party services](#third-party-services)
+    - [Site deployment](#site-deployment)
+    - [Geocoding Services: Google Maps API with Geocoder Rails Gem](#geocoding-services-google-maps-api-with-geocoder-rails-gem)
+    - [Image content storage: Amazon S3 Bucket](#image-content-storage-amazon-s3-bucket)
+  - [Models Relationships and Database Relations](#models-relationships-and-database-relations)
+    - [User model](#user-model)
+      - [User sub-model: Blocklist](#user-sub-model-blocklist)
+    - [Profile model and data](#profile-model-and-data)
+      - [Profile Picture](#profile-picture)
+      - [Geospatial Data](#geospatial-data)
+    - [Hug Model and Data](#hug-model-and-data)
+    - [User to User Messaging](#user-to-user-messaging)
+      - [Conversation Model and Data](#conversation-model-and-data)
+      - [Messages Model and Data](#messages-model-and-data)
+  - [Database ERD and Schema Implementation](#database-erd-and-schema-implementation)
+    - [Application database ERD](#application-database-erd)
+    - [Schema Implementation](#schema-implementation)
+  - [User Stories](#user-stories)
+  - [UI Wireframes](#ui-wireframes)
+  - [Project Planning and Tracking](#project-planning-and-tracking)
 
 ### High-level Components (abstractions)
 
@@ -84,6 +83,8 @@ The high level components required for this app are:
 <!-- #TODO Doc: Describe usage of S3 Bucket -->
 
 
+[...](#hugs-market-place)
+
 ---
 
 
@@ -99,6 +100,8 @@ The data base ERD consists of three main model/data areas. Each of these areas r
 - Search capabiility (with abiility to exclude results of users with have blocked other users) 
 
 Data pertaining to the application is stored within two datasources. These are Postgresql tables and an external data storage source (AWS S3 data bucket). All data tables and fields within the Database ERD are to be assumed to be stored locally by Posetgresql, with the exception of the AWS table.
+
+[...](#hugs-market-place)
 
 ----
 
@@ -121,6 +124,8 @@ When the user is blocked by another user, both the users have their information 
 It also is referenced by the messages model to effectively disable their ability in the UI to message each other.
 
 In the UI of the application, the only user who can view a blocklist entry is the user who requested it. This allows for a user to destroy the entry and 'unblock' the formerly blocked user.
+
+[...](#hugs-market-place)
 
 ----
 
@@ -146,9 +151,13 @@ The 'distance_to' query method of the geocoder gem allows a profile to self refe
 
 The 'near' query method enables the Profile model to self reference itself and provide a list of other profiles within a given range. This enables the UI functionality of users to search profiles based on distance.
 
+[...](#hugs-market-place)
+
 ----
 
 #### Hug Model and Data
+
+[...](#hugs-market-place)
 
 ----
 
@@ -181,7 +190,9 @@ Each message contains a body of text stored in the *body* field that makes up th
 
 Each message also has a boolean value stored in the *read* field. By default this field is set to 'false'. When the user in the conversation who did not create the message accesses the message for the first time, this flag is then changed by the model to 'true'. The conversation model accesses this value and counts the number of messages that have a 'false' value. This count is then displayed in the UI next to the display name of the user in the list of conversation.
 
-----
+[...](#hugs-market-place)
+
+
 
 ### Database ERD and Schema Implementation
 
@@ -192,6 +203,8 @@ Each message also has a boolean value stored in the *read* field. By default thi
 
 ![This is an image of your user stories](This is the relative path to it)
 
+[...](#hugs-market-place)
+
 ---
 
 ### User Stories
@@ -201,6 +214,8 @@ Each message also has a boolean value stored in the *read* field. By default thi
 
 * You also just use normal markdown to describe them
 * User stories are well thought out, relevant, and comprehensively cover the needs of the app
+
+[...](#hugs-market-place)
 
 ---
 
@@ -215,11 +230,13 @@ Each message also has a boolean value stored in the *read* field. By default thi
 
 * More than five detailed and well designed wireframes provided, for several different screen sizes (as required for the app)
 
+[...](#hugs-market-place)
+
 ---
 
 ### Project Planning and Tracking
 
-Tasks were planned and managed using a checklist in this README.md file and by code tagging with the source files. A regular review of incomplete items was carried out with a VS Code extension called [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree&ssr=false#overview)
+Tasks were planned and managed using a checklist in the PLANNING.md file. A regular review of incomplete items was carried out with a VS Code extension called [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree&ssr=false#overview)
 
 The advantage to using this extension is that it provides a quick way to access parts of the file that are flagged using the code tagging method. A count of the remaining flagged items is also provided to right of each filename contating the tags.
 
@@ -239,3 +256,4 @@ Addtional planning 'on the fly' was carried out using a whiteboard next to my de
 ![Task planning on whiteboard](/docs/whiteboard.jpg)  
 ***A white board was used to list priorities and map out flow of the application***
 
+[...](#hugs-market-place)
