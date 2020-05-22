@@ -20,7 +20,7 @@ The high level components required for this app are:
       -  Data fields
       -  Visibility of profile to other users
       -  'Blocking' unwanted users
-- **Storing an image component** for each user (profile pictures, user gallery)
+- **Storing an image component** for each user (profile picture)
 - **Searching, sorting and/or filtering capability** based on user profile data and geocoding services. This will enable users find other suitable users within a given physical range
 - **Internal messaging system** to allow users to interact with each other
 
@@ -55,7 +55,6 @@ This is a problem that will provide a unique marketplace opportunity for this to
 
 ### 5. Discuss the database relations to be implemented
 
-![Application database ERD](/docs/Hugs_DB_ERD.png)
 
 <!-- #TODO Doc: ERD Explanation -->
 * Provides coherent discussion of the database relations, with reference to the ERD
@@ -63,6 +62,7 @@ This is a problem that will provide a unique marketplace opportunity for this to
 
 ### 6. Provide your database schema design
 
+![Application database ERD](/docs/Hugs_DB_ERD.png)
 <!-- #TODO ? Doc: DB Schema design (DBeaver output?) -->
 * Flawless, complex, complete, and well thought through ERDs provided
 
