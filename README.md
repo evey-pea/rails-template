@@ -55,7 +55,7 @@ This is a problem that will provide a unique marketplace opportunity for this to
 
 ### 5. Discuss the database relations to be implemented
 
-![Application database ERD](/docs/Hugs_DB_ERD.jpeg)
+![Application database ERD](/docs/Hugs_DB_ERD.png)
 
 <!-- #TODO Doc: ERD Explanation -->
 * Provides coherent discussion of the database relations, with reference to the ERD
