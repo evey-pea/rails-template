@@ -27,6 +27,14 @@
     <%= form.text_area :description %>
   </div>
   <div class="field">
+    <%=hidden_field_tag 'profile[huglist_id][]', nil %>
+    <% Huglist.all.each do |hug| %>
+      <%= check_box_tag 'profile[huglist_id][]', hug.id, profile.huglist_ids.include?(hug.id) %>
+      <%= hug["hugtype"] %>
+      <br>
+    <% end %>
+  </div>
+  <div class="field">
     <%= form.label :name_first, "First name" %>
     <%= form.text_field :name_first, required: :true %>
   </div>

@@ -17,6 +17,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    @profile_hugs = @profile.huglists.pluck(:hugtype).join(", ").capitalize
   end
 
   # GET /profiles/new
@@ -47,6 +48,8 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    profile = profile_params[:profile]
+    puts params[:huglist_id]
     respond_to do |format|
       if @profile.update(profile_params)
         format.html { redirect_to @profile, notice: "Profile was successfully updated." }
@@ -105,6 +108,6 @@ class ProfilesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def profile_params
-    params.require(:profile).permit(:user_id, :name_first, :name_second, :name_display, :description, :picture, :street_number, :road, :suburb, :city, :state, :postcode, :country)
+    params.require(:profile).permit(:user_id, :name_first, :name_second, :name_display, :description, :picture, :street_number, :road, :suburb, :city, :state, :postcode, :country, :huglist_ids)
   end
 end
