@@ -16,7 +16,11 @@
   </div>
   <div class="field">
     <%= form.label :name_display, "Display name" %>
-    <%= form.text_field :name_display %>
+    <%= form.text_field :name_display, required: :true  %>
+  </div>
+  <div class=field>
+    <%= form.label :picture %> <%= form.file_field :picture, accept:
+  'image/png,image/gif,image/jpeg,image/jpg' %>
   </div>
   <div class="field">
     <%= form.label :description, "About me" %>
@@ -24,11 +28,11 @@
   </div>
   <div class="field">
     <%= form.label :name_first, "First name" %>
-    <%= form.text_field :name_first %>
+    <%= form.text_field :name_first, required: :true %>
   </div>
   <div class="field">
     <%= form.label :name_second, "Last name" %>
-    <%= form.text_field :name_second %>
+    <%= form.text_field :name_second, required: :true %>
   </div>
   <div class="field">
     <%= form.label :street_number, "House/Unit number" %>

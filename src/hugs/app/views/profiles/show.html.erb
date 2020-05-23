@@ -5,6 +5,7 @@
 <% if @profile.id == current_user["id"] %>
   <%= link_to 'Edit my profile', edit_profile_path(@profile) %>
 <% end %>
+<br><%= image_tag @profile.picture if @profile.picture.attached?%>
 <h3>About me</h3>
 <p>
   <%= @profile.description %>
@@ -56,4 +57,3 @@
     <%= link_to "Block #{@profile.name_display}", blocklists_path(blocked_id: @profile.user_id), method: :post %>
   </div>
 <%end%>
-
