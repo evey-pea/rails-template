@@ -23014,3 +23014,1532 @@ Completed 200 OK in 45ms (Views: 32.9ms | ActiveRecord: 2.1ms)
   [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mProfile Load (1.7ms)[0m  [1m[34mSELECT  profiles.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-33.7568828 - profiles.latitude) * PI() / 180 / 2), 2) + COS(-33.7568828 * PI() / 180) * COS(profiles.latitude * PI() / 180) * POWER(SIN((150.7211446 - profiles.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( ((profiles.longitude - 150.7211446) / 57.2957795), ((profiles.latitude - -33.7568828) / 57.2957795)) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM "profiles" WHERE (profiles.latitude BETWEEN -40.05213404143112 AND -27.461631558568886 AND profiles.longitude BETWEEN 143.1493024870018 AND 158.29298671299821 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-33.7568828 - profiles.latitude) * PI() / 180 / 2), 2) + COS(-33.7568828 * PI() / 180) * COS(profiles.latitude * PI() / 180) * POWER(SIN((150.7211446 - profiles.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 700) AND "profiles"."user_id" != $1 ORDER BY distance ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5258461725726008730)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(5258461725726008730)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5258461725726008730)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5258461725726008730)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5258461725726008730)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5258461725726008730)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-05-23 15:28:19 +1000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 7.1ms)
+
+
+  
+ArgumentError (Unknown validator: 'PrescenceValidator'):
+  
+app/models/profile.rb:8:in `<class:Profile>'
+app/models/profile.rb:1:in `<main>'
+app/controllers/profiles_controller.rb:80:in `set_user_profile'
+Started GET "/" for ::1 at 2020-05-23 15:29:02 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (4.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mBlocklist Load (0.5ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/controllers/profiles_controller.rb:89
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 4]]
+  ↳ app/controllers/profiles_controller.rb:90
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" != $1[0m  [["user_id", 4]]
+  ↳ app/views/profiles/index.html.erb:15
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:24
+  Rendered profiles/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_account_bar.html.erb (0.6ms)
+  Rendered layouts/_nav_bar.html.erb (0.4ms)
+Completed 200 OK in 391ms (Views: 270.6ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:29:05 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (175.1ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile' for #<#<Class:0x00007f499c8e7208>:0x00007f49a0038450>
+Did you mean?  @profile
+               provide):
+     5: <% if @profile.id == current_user["id"] %>
+     6:   <%= link_to 'Edit my profile', edit_profile_path(@profile) %>
+     7: <% end %>
+     8: <%= image_tag profile.picture if profile.picture.attached? %>
+     9: <h3>About me</h3>
+    10: <p>
+    11:   <%= @profile.description %>
+  
+app/views/profiles/show.html.erb:8:in `_app_views_profiles_show_html_erb___815229547148127707_25720'
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:29:42 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (166.3ms)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile' for #<#<Class:0x00007f499c8e7208>:0x00007f49a161b010>
+Did you mean?  @profile
+               provide):
+     5: <% if @profile.id == current_user["id"] %>
+     6:   <%= link_to 'Edit my profile', edit_profile_path(@profile) %>
+     7: <% end %>
+     8: <%= image_tag @profile.picture if profile.picture.attached? %>
+     9: <h3>About me</h3>
+    10: <p>
+    11:   <%= @profile.description %>
+  
+app/views/profiles/show.html.erb:8:in `_app_views_profiles_show_html_erb___815229547148127707_26440'
+Started DELETE "/users/sign_out" for ::1 at 2020-05-23 15:30:10 +1000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"M2uDSanx0sZZpUOckmB3bZDtTP/lvatJo+8LIjHofIAPVcvs5jN4P8uSoWzuipWG/lcXZsukkW1GW4LBlaZK7A=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-23 15:30:10 +1000
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-23 15:30:10 +1000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-23 15:30:13 +1000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rj8IaVQ2zADw9RzxzKlWT6oyApSv9sovIOF7lkB5UTSYlJEQpskXCDaXgFsdOvHeTsKk0Dzg40A+RaOYvk8bFw==", "user"=>{"email"=>"evelyn.paplauskas@outllook.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "evelyn.paplauskas@outllook.com"], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 182ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-23 15:30:14 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mBlocklist Load (0.2ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:89
+  [1m[36mBlocklist Load (0.2ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:90
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" NOT IN ($1, $2)[0m  [["user_id", 2], ["user_id", 1]]
+  ↳ app/views/profiles/index.html.erb:15
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:24
+  Rendered profiles/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (1.6ms)
+Completed 200 OK in 59ms (Views: 42.7ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/profiles/4" for ::1 at 2020-05-23 15:30:17 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (158.1ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `profile' for #<#<Class:0x00007f499c8e7208>:0x00007f49958cc748>
+Did you mean?  @profile
+               provide):
+     5: <% if @profile.id == current_user["id"] %>
+     6:   <%= link_to 'Edit my profile', edit_profile_path(@profile) %>
+     7: <% end %>
+     8: <%= image_tag @profile.picture if profile.picture.attached? %>
+     9: <h3>About me</h3>
+    10: <p>
+    11:   <%= @profile.description %>
+  
+app/views/profiles/show.html.erb:8:in `_app_views_profiles_show_html_erb___815229547148127707_27700'
+Started GET "/profiles/4" for ::1 at 2020-05-23 15:30:39 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (1.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (4.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (39.7ms)
+  Rendered layouts/_account_bar.html.erb (1.1ms)
+  Rendered layouts/_nav_bar.html.erb (0.8ms)
+Completed 200 OK in 137ms (Views: 101.8ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:31:00 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+  Rendered layouts/_nav_bar.html.erb (0.5ms)
+Completed 200 OK in 81ms (Views: 68.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:31:02 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (14.2ms)
+  Rendered profiles/edit.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/profiles/1" for ::1 at 2020-05-23 15:31:11 +1000
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"umrirIzeiOStYERmf7P1oZYrqGwHk5PG6i7x++cfYRAfjPivTVXaigwCdgp3JgOTvxAm++gNVntA/GS8dGnCKQ==", "profile"=>{"user_id"=>"1", "name_display"=>"Evey", "description"=>"I Like Hugs", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007f49a1a1a508 @tempfile=#<Tempfile:/tmp/RackMultipart20200523-815894-hz6u2.jpg>, @original_filename="92800383_844444842724764_2472248248627101696_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[picture]\"; filename=\"92800383_844444842724764_2472248248627101696_n.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name_first"=>"Evelyn", "name_second"=>"Paplauskas", "street_number"=>"", "road"=>"Richmond Rd", "suburb"=>"Kingswood", "city"=>"", "state"=>"NSW", "postcode"=>"2747", "country"=>"Australia"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+[36m  S3 Storage (184.3ms) [0m[32mUploaded file to key: 75PNoz5Rr9Qvyetuhm34wn2M (checksum: jOFbuknsLv+Sq/5KQMr9Xw==)[0m
+  [1m[36mActiveStorage::Blob Create (13.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "75PNoz5Rr9Qvyetuhm34wn2M"], ["filename", "92800383_844444842724764_2472248248627101696_n.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 86212], ["checksum", "jOFbuknsLv+Sq/5KQMr9Xw=="], ["created_at", "2020-05-23 05:31:11.493228"]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Create (3.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "picture"], ["record_type", "Profile"], ["record_id", 1], ["blob_id", 1], ["created_at", "2020-05-23 05:31:11.547449"]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mProfile Update (1.2ms)[0m  [1m[33mUPDATE "profiles" SET "updated_at" = $1 WHERE "profiles"."id" = $2[0m  [["updated_at", "2020-05-23 05:31:11.553595"], ["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: af36b743-9303-47f7-b5a5-2c848c14c962) to Async(default) with arguments: #<GlobalID:0x00007f499d33bf38 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 1589ms (ActiveRecord: 34.6ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:31:12 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  ↳ app/controllers/profiles_controller.rb:83
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962] Performing ActiveStorage::AnalyzeJob (Job ID: af36b743-9303-47f7-b5a5-2c848c14c962) from Async(default) with arguments: #<GlobalID:0x00007f499d25fd58 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/1>>
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (4.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_account_bar.html.erb (0.9ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 77ms (Views: 52.1ms | ActiveRecord: 9.3ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962] [36m  S3 Storage (106.4ms) [0m[34mDownloaded file from key: 75PNoz5Rr9Qvyetuhm34wn2M[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962]   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [af36b743-9303-47f7-b5a5-2c848c14c962] Performed ActiveStorage::AnalyzeJob (Job ID: af36b743-9303-47f7-b5a5-2c848c14c962) from Async(default) in 119.81ms
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ac5fd365dab297673e7dd907b03b26afcbeffd81/92800383_844444842724764_2472248248627101696_n.jpg" for ::1 at 2020-05-23 15:31:12 +1000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ac5fd365dab297673e7dd907b03b26afcbeffd81", "filename"=>"92800383_844444842724764_2472248248627101696_n"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.6ms) [0m[34mGenerated URL for file at key: 75PNoz5Rr9Qvyetuhm34wn2M (https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/75PNoz5Rr9Qvyetuhm34wn2M?response-content-disposition=inline%3B%20filename%3D%2292800383_844444842724764_2472248248627101696_n.jpg%22%3B%20filename%2A%3DUTF-8%27%2792800383_844444842724764_2472248248627101696_n.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053113Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=489d55ff465c64ebdb968a12863a64a2dc92324e23a4f45587cdf82e3719326c)[0m
+Redirected to https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/75PNoz5Rr9Qvyetuhm34wn2M?response-content-disposition=inline%3B%20filename%3D%2292800383_844444842724764_2472248248627101696_n.jpg%22%3B%20filename%2A%3DUTF-8%27%2792800383_844444842724764_2472248248627101696_n.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053113Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=489d55ff465c64ebdb968a12863a64a2dc92324e23a4f45587cdf82e3719326c
+Completed 302 Found in 13ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:31:17 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.8ms)
+  Rendered profiles/edit.html.erb within layouts/application (74.3ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (0.4ms)
+Completed 200 OK in 118ms (Views: 110.1ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/profiles/1" for ::1 at 2020-05-23 15:31:30 +1000
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zsaozBuUyjyJxhpZQ7fxAFSBB9oqwAdmKMMoGjABJ65rILLP2h+YUiikKDVLIgcyfbqJTcVewtuCEb1do3eElw==", "profile"=>{"user_id"=>"1", "name_display"=>"Evey", "description"=>"I Like Hugs", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007f4994b72778 @tempfile=#<Tempfile:/tmp/RackMultipart20200523-815894-1o2xcs7.jpg>, @original_filename="face-picture-low.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[picture]\"; filename=\"face-picture-low.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name_first"=>"Evelyn", "name_second"=>"Paplauskas", "street_number"=>"", "road"=>"Richmond Rd", "suburb"=>"Kingswood", "city"=>"", "state"=>"NSW", "postcode"=>"2747", "country"=>"Australia"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+[36m  S3 Storage (128.8ms) [0m[32mUploaded file to key: 5tUhJbQhy46SQdauUPAEw2zV (checksum: N58PHKq4JT62I1qYZbmzLg==)[0m
+  [1m[36mActiveStorage::Blob Create (69.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "5tUhJbQhy46SQdauUPAEw2zV"], ["filename", "face-picture-low.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 18219], ["checksum", "N58PHKq4JT62I1qYZbmzLg=="], ["created_at", "2020-05-23 05:31:31.077133"]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "picture"], ["record_type", "Profile"], ["record_id", 1], ["blob_id", 2], ["created_at", "2020-05-23 05:31:31.151122"]]
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 9a68e5c6-f388-4a2e-ad7a-890a0c00f885) to Async(default) with arguments: #<GlobalID:0x00007f499445c6f0 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/1>>
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [9a68e5c6-f388-4a2e-ad7a-890a0c00f885] Performing ActiveStorage::PurgeJob (Job ID: 9a68e5c6-f388-4a2e-ad7a-890a0c00f885) from Async(default) with arguments: #<GlobalID:0x00007f4994225c88 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [9a68e5c6-f388-4a2e-ad7a-890a0c00f885]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9a68e5c6-f388-4a2e-ad7a-890a0c00f885]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [9a68e5c6-f388-4a2e-ad7a-890a0c00f885]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9a68e5c6-f388-4a2e-ad7a-890a0c00f885]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [9a68e5c6-f388-4a2e-ad7a-890a0c00f885]   [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9a68e5c6-f388-4a2e-ad7a-890a0c00f885]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [9a68e5c6-f388-4a2e-ad7a-890a0c00f885] Performed ActiveStorage::PurgeJob (Job ID: 9a68e5c6-f388-4a2e-ad7a-890a0c00f885) from Async(default) in 8.16ms
+  [1m[36mProfile Update (1.1ms)[0m  [1m[33mUPDATE "profiles" SET "updated_at" = $1 WHERE "profiles"."id" = $2[0m  [["updated_at", "2020-05-23 05:31:31.153255"], ["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d756511d-fd9f-41f3-83aa-8551a19e9b03) to Async(default) with arguments: #<GlobalID:0x00007f49a19b3ab0 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 1396ms (ActiveRecord: 80.2ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03] Performing ActiveStorage::AnalyzeJob (Job ID: d756511d-fd9f-41f3-83aa-8551a19e9b03) from Async(default) with arguments: #<GlobalID:0x00007f49a19fc738 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/2>>
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:31:32 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (5.9ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03] [36m  S3 Storage (34.5ms) [0m[34mDownloaded file from key: 5tUhJbQhy46SQdauUPAEw2zV[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03]   [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03]   [1m[36mActiveStorage::Blob Update (1.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d756511d-fd9f-41f3-83aa-8551a19e9b03] Performed ActiveStorage::AnalyzeJob (Job ID: d756511d-fd9f-41f3-83aa-8551a19e9b03) from Async(default) in 48.7ms
+  Rendered layouts/_account_bar.html.erb (1.0ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 68ms (Views: 51.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--29249843794b3d64c3e5a624e43cec4a9cd0c893/face-picture-low.jpg" for ::1 at 2020-05-23 15:31:32 +1000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--29249843794b3d64c3e5a624e43cec4a9cd0c893", "filename"=>"face-picture-low"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.9ms) [0m[34mGenerated URL for file at key: 5tUhJbQhy46SQdauUPAEw2zV (https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/5tUhJbQhy46SQdauUPAEw2zV?response-content-disposition=inline%3B%20filename%3D%22face-picture-low.jpg%22%3B%20filename%2A%3DUTF-8%27%27face-picture-low.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053132Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=40b759dc0e34dc8f0e427c5d8cfcf9b26817118c5dbcfe9a742c7c5944cbbc4b)[0m
+Redirected to https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/5tUhJbQhy46SQdauUPAEw2zV?response-content-disposition=inline%3B%20filename%3D%22face-picture-low.jpg%22%3B%20filename%2A%3DUTF-8%27%27face-picture-low.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053132Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=40b759dc0e34dc8f0e427c5d8cfcf9b26817118c5dbcfe9a742c7c5944cbbc4b
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:32:05 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_account_bar.html.erb (1.0ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 42ms (Views: 34.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:32:14 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.6ms)
+  Rendered profiles/edit.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 46ms (Views: 38.4ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/profiles/1" for ::1 at 2020-05-23 15:32:22 +1000
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d0220tEU8Q8huRZWy8wS/gl+wbQyREzusjC4I2mO0YvSq6zREJ+jYYDbJDrDWeTMIEVPI93aiVMY4i1k+vhysg==", "profile"=>{"user_id"=>"1", "name_display"=>"Evey", "description"=>"I Like Hugs", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007f499d02b988 @tempfile=#<Tempfile:/tmp/RackMultipart20200523-815894-1r6lp6n.jpg>, @original_filename="face-picture-high.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[picture]\"; filename=\"face-picture-high.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name_first"=>"Evelyn", "name_second"=>"Paplauskas", "street_number"=>"", "road"=>"Richmond Rd", "suburb"=>"Kingswood", "city"=>"", "state"=>"NSW", "postcode"=>"2747", "country"=>"Australia"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+[36m  S3 Storage (150.6ms) [0m[32mUploaded file to key: RMzeYKVBPqpHiuXBSkLEFYQC (checksum: WrmwrBDOzq4mbx1s1VQirw==)[0m
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "RMzeYKVBPqpHiuXBSkLEFYQC"], ["filename", "face-picture-high.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 85685], ["checksum", "WrmwrBDOzq4mbx1s1VQirw=="], ["created_at", "2020-05-23 05:32:22.562044"]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "picture"], ["record_type", "Profile"], ["record_id", 1], ["blob_id", 3], ["created_at", "2020-05-23 05:32:22.567547"]]
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 753ae8f3-23ff-4f12-bc42-5c3069409f09) to Async(default) with arguments: #<GlobalID:0x00007f499cf2bc18 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/2>>
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (3.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [753ae8f3-23ff-4f12-bc42-5c3069409f09] Performing ActiveStorage::PurgeJob (Job ID: 753ae8f3-23ff-4f12-bc42-5c3069409f09) from Async(default) with arguments: #<GlobalID:0x00007f499cefa9d8 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [753ae8f3-23ff-4f12-bc42-5c3069409f09]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [753ae8f3-23ff-4f12-bc42-5c3069409f09]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [753ae8f3-23ff-4f12-bc42-5c3069409f09]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [753ae8f3-23ff-4f12-bc42-5c3069409f09]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [753ae8f3-23ff-4f12-bc42-5c3069409f09]   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [753ae8f3-23ff-4f12-bc42-5c3069409f09]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [753ae8f3-23ff-4f12-bc42-5c3069409f09] Performed ActiveStorage::PurgeJob (Job ID: 753ae8f3-23ff-4f12-bc42-5c3069409f09) from Async(default) in 5.28ms
+  [1m[36mProfile Update (1.2ms)[0m  [1m[33mUPDATE "profiles" SET "updated_at" = $1 WHERE "profiles"."id" = $2[0m  [["updated_at", "2020-05-23 05:32:22.569848"], ["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 5bf4954f-b1dd-4e91-b19f-4639e2e270c0) to Async(default) with arguments: #<GlobalID:0x00007f499c7acc80 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/3>>
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 1346ms (ActiveRecord: 11.4ms)
+
+
+  [1m[36mActiveStorage::Blob Load (2.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0] Performing ActiveStorage::AnalyzeJob (Job ID: 5bf4954f-b1dd-4e91-b19f-4639e2e270c0) from Async(default) with arguments: #<GlobalID:0x00007f499c5bb570 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/3>>
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:32:23 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_account_bar.html.erb (1.3ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 57ms (Views: 48.9ms | ActiveRecord: 1.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0] [36m  S3 Storage (74.0ms) [0m[34mDownloaded file from key: RMzeYKVBPqpHiuXBSkLEFYQC[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0]   [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5bf4954f-b1dd-4e91-b19f-4639e2e270c0] Performed ActiveStorage::AnalyzeJob (Job ID: 5bf4954f-b1dd-4e91-b19f-4639e2e270c0) from Async(default) in 96.58ms
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bedde59a91807327734a6f80475c8a0673716ea9/face-picture-high.jpg" for ::1 at 2020-05-23 15:32:23 +1000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bedde59a91807327734a6f80475c8a0673716ea9", "filename"=>"face-picture-high"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.5ms) [0m[34mGenerated URL for file at key: RMzeYKVBPqpHiuXBSkLEFYQC (https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/RMzeYKVBPqpHiuXBSkLEFYQC?response-content-disposition=inline%3B%20filename%3D%22face-picture-high.jpg%22%3B%20filename%2A%3DUTF-8%27%27face-picture-high.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053223Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4db0ea58943f64e5a9ad0f18359e92c6e2eab3288f3d0f6ca5fbd828dc33a586)[0m
+Redirected to https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/RMzeYKVBPqpHiuXBSkLEFYQC?response-content-disposition=inline%3B%20filename%3D%22face-picture-high.jpg%22%3B%20filename%2A%3DUTF-8%27%27face-picture-high.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053223Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4db0ea58943f64e5a9ad0f18359e92c6e2eab3288f3d0f6ca5fbd828dc33a586
+Completed 302 Found in 8ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:32:32 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.2ms)
+  Rendered profiles/edit.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+  Rendered layouts/_nav_bar.html.erb (0.5ms)
+Completed 200 OK in 43ms (Views: 34.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:32:36 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_account_bar.html.erb (1.1ms)
+  Rendered layouts/_nav_bar.html.erb (0.8ms)
+Completed 200 OK in 49ms (Views: 34.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:32:37 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (7.2ms)
+  Rendered profiles/edit.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_account_bar.html.erb (1.0ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 46ms (Views: 39.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:33:12 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (6.2ms)
+  Rendered profiles/edit.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+  Rendered layouts/_nav_bar.html.erb (0.8ms)
+Completed 200 OK in 46ms (Views: 42.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:33:13 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.6ms)
+
+
+  
+SyntaxError (/home/evelyn/Documents/coder_academy/rails-template/src/hugs/app/views/profiles/show.html.erb:8: syntax error, unexpected local variable or method, expecting ')'
+....picture.attached? width: 200px);@output_buffer.safe_append='
+...                             ^~
+):
+  
+app/views/profiles/show.html.erb:8: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:33:24 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.9ms)
+
+
+  
+SyntaxError (/home/evelyn/Documents/coder_academy/rails-template/src/hugs/app/views/profiles/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+... if @profile.picture.attached?, width: 200px);@output_buffer...
+...                              ^
+):
+  
+app/views/profiles/show.html.erb:8: syntax error, unexpected ',', expecting ')'
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:34:11 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_account_bar.html.erb (1.0ms)
+  Rendered layouts/_nav_bar.html.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 35.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:34:14 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (6.7ms)
+  Rendered profiles/edit.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_account_bar.html.erb (1.1ms)
+  Rendered layouts/_nav_bar.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 43.8ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/profiles/1" for ::1 at 2020-05-23 15:34:21 +1000
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DnuSrBc6/oCk+gClTdMG3vN+DfSLkEv69QjjUMZo3KqrnYiv1rGs7gWYMslFRvDs2kWDY2QOjkdf2nYXVR5/kw==", "profile"=>{"user_id"=>"1", "name_display"=>"Evey", "description"=>"I Like Hugs", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007f4995829070 @tempfile=#<Tempfile:/tmp/RackMultipart20200523-815894-1kii1p6.jpg>, @original_filename="92800383_844444842724764_2472248248627101696_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[picture]\"; filename=\"92800383_844444842724764_2472248248627101696_n.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name_first"=>"Evelyn", "name_second"=>"Paplauskas", "street_number"=>"", "road"=>"Richmond Rd", "suburb"=>"Kingswood", "city"=>"", "state"=>"NSW", "postcode"=>"2747", "country"=>"Australia"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+[36m  S3 Storage (157.5ms) [0m[32mUploaded file to key: RkqU1HzRe4MuGpvR1iTKpTFC (checksum: jOFbuknsLv+Sq/5KQMr9Xw==)[0m
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "RkqU1HzRe4MuGpvR1iTKpTFC"], ["filename", "92800383_844444842724764_2472248248627101696_n.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 86212], ["checksum", "jOFbuknsLv+Sq/5KQMr9Xw=="], ["created_at", "2020-05-23 05:34:21.478525"]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "picture"], ["record_type", "Profile"], ["record_id", 1], ["blob_id", 4], ["created_at", "2020-05-23 05:34:21.487743"]]
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 44614018-372d-4cc1-9aa9-bbfc99e988b6) to Async(default) with arguments: #<GlobalID:0x00007f4994b73038 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/3>>
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [44614018-372d-4cc1-9aa9-bbfc99e988b6] Performing ActiveStorage::PurgeJob (Job ID: 44614018-372d-4cc1-9aa9-bbfc99e988b6) from Async(default) with arguments: #<GlobalID:0x00007f4994b9fe30 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::PurgeJob] [44614018-372d-4cc1-9aa9-bbfc99e988b6]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [44614018-372d-4cc1-9aa9-bbfc99e988b6]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [44614018-372d-4cc1-9aa9-bbfc99e988b6]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [44614018-372d-4cc1-9aa9-bbfc99e988b6]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [44614018-372d-4cc1-9aa9-bbfc99e988b6]   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [44614018-372d-4cc1-9aa9-bbfc99e988b6]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [44614018-372d-4cc1-9aa9-bbfc99e988b6] Performed ActiveStorage::PurgeJob (Job ID: 44614018-372d-4cc1-9aa9-bbfc99e988b6) from Async(default) in 4.46ms
+  [1m[36mProfile Update (1.0ms)[0m  [1m[33mUPDATE "profiles" SET "updated_at" = $1 WHERE "profiles"."id" = $2[0m  [["updated_at", "2020-05-23 05:34:21.491896"], ["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[35m (69.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a91229a5-298d-4f66-ae90-70ad78c43c7f) to Async(default) with arguments: #<GlobalID:0x00007f49945503b8 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/4>>
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 2133ms (ActiveRecord: 76.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f] Performing ActiveStorage::AnalyzeJob (Job ID: a91229a5-298d-4f66-ae90-70ad78c43c7f) from Async(default) with arguments: #<GlobalID:0x00007f49945b0f10 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/4>>
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:34:23 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 30.7ms | ActiveRecord: 1.9ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f] [36m  S3 Storage (87.0ms) [0m[34mDownloaded file from key: RkqU1HzRe4MuGpvR1iTKpTFC[0m
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--437aa385455abe470cc0593c5902f805f9e82069/92800383_844444842724764_2472248248627101696_n.jpg" for ::1 at 2020-05-23 15:34:23 +1000
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--437aa385455abe470cc0593c5902f805f9e82069", "filename"=>"92800383_844444842724764_2472248248627101696_n"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f]   [1m[36mActiveStorage::Blob Update (2.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: RkqU1HzRe4MuGpvR1iTKpTFC (https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/RkqU1HzRe4MuGpvR1iTKpTFC?response-content-disposition=inline%3B%20filename%3D%2292800383_844444842724764_2472248248627101696_n.jpg%22%3B%20filename%2A%3DUTF-8%27%2792800383_844444842724764_2472248248627101696_n.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053423Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2b0fc3c2092820c6639281c40b72263279caffb0e3d8c17fef2f23758d42d961)[0m
+Redirected to https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/RkqU1HzRe4MuGpvR1iTKpTFC?response-content-disposition=inline%3B%20filename%3D%2292800383_844444842724764_2472248248627101696_n.jpg%22%3B%20filename%2A%3DUTF-8%27%2792800383_844444842724764_2472248248627101696_n.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053423Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2b0fc3c2092820c6639281c40b72263279caffb0e3d8c17fef2f23758d42d961
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f]   [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a91229a5-298d-4f66-ae90-70ad78c43c7f] Performed ActiveStorage::AnalyzeJob (Job ID: a91229a5-298d-4f66-ae90-70ad78c43c7f) from Async(default) in 113.63ms
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:34:42 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (1.0ms)
+Completed 200 OK in 105ms (Views: 96.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:35:12 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_account_bar.html.erb (0.6ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 37ms (Views: 29.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:35:24 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_account_bar.html.erb (0.6ms)
+  Rendered layouts/_nav_bar.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 42.0ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-23 15:35:41 +1000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1BodT4RAz/FgcgDJSNCY9HR0cvkOMKXeOSs7tSLhzllaOWDSkdn+YXXOD7MxE7x3Bd5b4t1I0D7kc19rCs3xpg=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-23 15:35:41 +1000
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-23 15:35:41 +1000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_account_bar.html.erb (1.1ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-23 15:35:47 +1000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YzzAO+I7p67utnOHEek2eySL7l3PH1D7G9xaeU5H4feWS2rdxBDzUnwHqrIMB762WeZcbkrRKjXDxUoe8JZFbQ==", "user"=>{"email"=>"poopman@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "poopman@test.com"], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 129ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-23 15:35:47 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mBlocklist Load (0.5ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/profiles_controller.rb:89
+  [1m[36mBlocklist Load (0.2ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 3]]
+  ↳ app/controllers/profiles_controller.rb:90
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" != $1[0m  [["user_id", 3]]
+  ↳ app/views/profiles/index.html.erb:15
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:24
+  Rendered profiles/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 28.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:35:49 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 26.4ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-23 15:35:57 +1000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PatWqgDj7CEearUXPxTwqF/YhN5Qj7L5ee2IkQv62JX49NYRUoGCUBkb++jTCK6nfjRsX8MS89B7cPUvs01g/w=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-23 15:35:57 +1000
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-23 15:35:57 +1000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_account_bar.html.erb (1.2ms)
+Completed 200 OK in 30ms (Views: 28.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-05-23 15:36:02 +1000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CkQyozF3cUSuUlR6AkQu8LbTeNHgEql383TlJSal0Ey/YWCGWfs86E7lsYlCQ9B2C9cJ72Zq+KEgsFahUAWpwA==", "user"=>{"email"=>"evelyn.paplauskas@outllook.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "evelyn.paplauskas@outllook.com"], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 127ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-23 15:36:02 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mBlocklist Load (0.4ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:89
+  [1m[36mBlocklist Load (0.4ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:90
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" NOT IN ($1, $2)[0m  [["user_id", 2], ["user_id", 1]]
+  ↳ app/views/profiles/index.html.erb:15
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:24
+  Rendered profiles/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_account_bar.html.erb (1.0ms)
+  Rendered layouts/_nav_bar.html.erb (0.9ms)
+Completed 200 OK in 43ms (Views: 33.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:36:05 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 27.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:36:08 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.6ms)
+  Rendered profiles/edit.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+  Rendered layouts/_nav_bar.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 33.3ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/profiles/1" for ::1 at 2020-05-23 15:36:17 +1000
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4kSICmVkymcbeLMX6gSm3wzqM//bs7aAmIEgyHdKtknZX49azSB37nBmXPP/rrqLNeIg5e1k6XZjfXSRL+JCWg==", "profile"=>{"user_id"=>"1", "name_display"=>"Evey", "description"=>"I Like Hugs", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007f49a0223210 @tempfile=#<Tempfile:/tmp/RackMultipart20200523-815894-1exr80w.jpg>, @original_filename="face-picture-low.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[picture]\"; filename=\"face-picture-low.jpg\"\r\nContent-Type: image/jpeg\r\n">, "name_first"=>"Evelyn", "name_second"=>"Paplauskas", "street_number"=>"", "road"=>"Richmond Rd", "suburb"=>"Kingswood", "city"=>"", "state"=>"NSW", "postcode"=>"2747", "country"=>"Australia"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+[36m  S3 Storage (106.5ms) [0m[32mUploaded file to key: AVie4jATBHFemeo4JriiNLWK (checksum: N58PHKq4JT62I1qYZbmzLg==)[0m
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "AVie4jATBHFemeo4JriiNLWK"], ["filename", "face-picture-low.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 18219], ["checksum", "N58PHKq4JT62I1qYZbmzLg=="], ["created_at", "2020-05-23 05:36:17.524453"]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "picture"], ["record_type", "Profile"], ["record_id", 1], ["blob_id", 5], ["created_at", "2020-05-23 05:36:17.532873"]]
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 8fe82bb6-ab33-4812-aaaf-9132157b1a48) to Async(default) with arguments: #<GlobalID:0x00007f499d623a20 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/4>>
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (4.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8fe82bb6-ab33-4812-aaaf-9132157b1a48] Performing ActiveStorage::PurgeJob (Job ID: 8fe82bb6-ab33-4812-aaaf-9132157b1a48) from Async(default) with arguments: #<GlobalID:0x00007f499d607730 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [8fe82bb6-ab33-4812-aaaf-9132157b1a48]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8fe82bb6-ab33-4812-aaaf-9132157b1a48]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8fe82bb6-ab33-4812-aaaf-9132157b1a48]   [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8fe82bb6-ab33-4812-aaaf-9132157b1a48]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8fe82bb6-ab33-4812-aaaf-9132157b1a48]   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8fe82bb6-ab33-4812-aaaf-9132157b1a48]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [8fe82bb6-ab33-4812-aaaf-9132157b1a48] Performed ActiveStorage::PurgeJob (Job ID: 8fe82bb6-ab33-4812-aaaf-9132157b1a48) from Async(default) in 6.06ms
+  [1m[36mProfile Update (1.0ms)[0m  [1m[33mUPDATE "profiles" SET "updated_at" = $1 WHERE "profiles"."id" = $2[0m  [["updated_at", "2020-05-23 05:36:17.536713"], ["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41) to Async(default) with arguments: #<GlobalID:0x00007f499d583408 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/5>>
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 1510ms (ActiveRecord: 13.1ms)
+
+
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41] Performing ActiveStorage::AnalyzeJob (Job ID: 45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41) from Async(default) with arguments: #<GlobalID:0x00007f499d4e2ee0 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/5>>
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:36:18 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_account_bar.html.erb (0.9ms)
+  Rendered layouts/_nav_bar.html.erb (0.8ms)
+Completed 200 OK in 46ms (Views: 34.2ms | ActiveRecord: 1.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41] [36m  S3 Storage (76.6ms) [0m[34mDownloaded file from key: AVie4jATBHFemeo4JriiNLWK[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41]   [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41] Performed ActiveStorage::AnalyzeJob (Job ID: 45a1d27b-f61a-48ec-8cd3-c5ac8bb0fc41) from Async(default) in 99.07ms
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8281c54730542cb28645f1920f334e8fb3d7ef0d/face-picture-low.jpg" for ::1 at 2020-05-23 15:36:19 +1000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8281c54730542cb28645f1920f334e8fb3d7ef0d", "filename"=>"face-picture-low"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.4ms) [0m[34mGenerated URL for file at key: AVie4jATBHFemeo4JriiNLWK (https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/AVie4jATBHFemeo4JriiNLWK?response-content-disposition=inline%3B%20filename%3D%22face-picture-low.jpg%22%3B%20filename%2A%3DUTF-8%27%27face-picture-low.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053619Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=748e1741af3761150c260f91c0a703da13f392931cae08031196f060d85ba2bc)[0m
+Redirected to https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/AVie4jATBHFemeo4JriiNLWK?response-content-disposition=inline%3B%20filename%3D%22face-picture-low.jpg%22%3B%20filename%2A%3DUTF-8%27%27face-picture-low.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053619Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=748e1741af3761150c260f91c0a703da13f392931cae08031196f060d85ba2bc
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:36:41 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (5.8ms)
+  Rendered profiles/edit.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_account_bar.html.erb (0.8ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 47ms (Views: 40.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles/1/edit" for ::1 at 2020-05-23 15:36:58 +1000
+Processing by ProfilesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  Rendering profiles/edit.html.erb within layouts/application
+  Rendered profiles/_form.html.erb (7.0ms)
+  Rendered profiles/edit.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_account_bar.html.erb (0.6ms)
+  Rendered layouts/_nav_bar.html.erb (0.5ms)
+Completed 200 OK in 40ms (Views: 34.3ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/profiles/1" for ::1 at 2020-05-23 15:37:16 +1000
+Processing by ProfilesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGdPIKHmlzlnEGN1h8ZhKnsjTsBtwF5ITF0ust8HhKJmtcJGi75QnNW4v+9VqSuPODnVwM67O3XXERZELIDkMA==", "profile"=>{"user_id"=>"1", "name_display"=>"Evey", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007f49a15ed318 @tempfile=#<Tempfile:/tmp/RackMultipart20200523-815894-tbwwqx.jpg>, @original_filename="face-picture-high.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"profile[picture]\"; filename=\"face-picture-high.jpg\"\r\nContent-Type: image/jpeg\r\n">, "description"=>"I Like Hugs", "name_first"=>"Evelyn", "name_second"=>"Paplauskas", "street_number"=>"", "road"=>"Richmond Rd", "suburb"=>"Kingswood", "city"=>"", "state"=>"NSW", "postcode"=>"2747", "country"=>"Australia"}, "commit"=>"Update Profile", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+[36m  S3 Storage (147.3ms) [0m[32mUploaded file to key: rhuKQRwSYyNkMmZfKJH26UMR (checksum: WrmwrBDOzq4mbx1s1VQirw==)[0m
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "rhuKQRwSYyNkMmZfKJH26UMR"], ["filename", "face-picture-high.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 85685], ["checksum", "WrmwrBDOzq4mbx1s1VQirw=="], ["created_at", "2020-05-23 05:37:17.109215"]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "picture"], ["record_type", "Profile"], ["record_id", 1], ["blob_id", 6], ["created_at", "2020-05-23 05:37:17.121638"]]
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: da54c3a7-f67f-4c90-87b9-ec52705fa07d) to Async(default) with arguments: #<GlobalID:0x00007f49a1440f60 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/5>>
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [da54c3a7-f67f-4c90-87b9-ec52705fa07d] Performing ActiveStorage::PurgeJob (Job ID: da54c3a7-f67f-4c90-87b9-ec52705fa07d) from Async(default) with arguments: #<GlobalID:0x00007f49a14a1b80 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::PurgeJob] [da54c3a7-f67f-4c90-87b9-ec52705fa07d]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [da54c3a7-f67f-4c90-87b9-ec52705fa07d]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [da54c3a7-f67f-4c90-87b9-ec52705fa07d]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [da54c3a7-f67f-4c90-87b9-ec52705fa07d]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [da54c3a7-f67f-4c90-87b9-ec52705fa07d]   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [da54c3a7-f67f-4c90-87b9-ec52705fa07d]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::PurgeJob] [da54c3a7-f67f-4c90-87b9-ec52705fa07d] Performed ActiveStorage::PurgeJob (Job ID: da54c3a7-f67f-4c90-87b9-ec52705fa07d) from Async(default) in 3.51ms
+  [1m[36mProfile Update (1.0ms)[0m  [1m[33mUPDATE "profiles" SET "updated_at" = $1 WHERE "profiles"."id" = $2[0m  [["updated_at", "2020-05-23 05:37:17.127440"], ["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:51
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:51
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b2e06aa3-e876-4e23-806e-cb52798fbd73) to Async(default) with arguments: #<GlobalID:0x00007f49a0606148 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/6>>
+Redirected to http://localhost:3000/profiles/1
+Completed 302 Found in 1530ms (ActiveRecord: 12.6ms)
+
+
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73] Performing ActiveStorage::AnalyzeJob (Job ID: b2e06aa3-e876-4e23-806e-cb52798fbd73) from Async(default) with arguments: #<GlobalID:0x00007f49a04039e0 @uri=#<URI::GID gid://hugs/ActiveStorage::Blob/6>>
+Started GET "/profiles/1" for ::1 at 2020-05-23 15:37:18 +1000
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (2.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:103
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:98
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Profile"], ["name", "picture"], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/profiles/show.html.erb:8
+  Rendered profiles/show.html.erb within layouts/application (5.7ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73] [36m  S3 Storage (46.2ms) [0m[34mDownloaded file from key: rhuKQRwSYyNkMmZfKJH26UMR[0m
+  Rendered layouts/_account_bar.html.erb (1.0ms)
+  Rendered layouts/_nav_bar.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 39.3ms | ActiveRecord: 4.2ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73]   [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73]   ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b2e06aa3-e876-4e23-806e-cb52798fbd73] Performed ActiveStorage::AnalyzeJob (Job ID: b2e06aa3-e876-4e23-806e-cb52798fbd73) from Async(default) in 80.92ms
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--199953ff2b51ec3261f7d576ec5f1ef5a7621233/face-picture-high.jpg" for ::1 at 2020-05-23 15:37:18 +1000
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--199953ff2b51ec3261f7d576ec5f1ef5a7621233", "filename"=>"face-picture-high"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.3ms) [0m[34mGenerated URL for file at key: rhuKQRwSYyNkMmZfKJH26UMR (https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/rhuKQRwSYyNkMmZfKJH26UMR?response-content-disposition=inline%3B%20filename%3D%22face-picture-high.jpg%22%3B%20filename%2A%3DUTF-8%27%27face-picture-high.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053718Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=19c1291aee165cb5537727b074a36c9bb015974ee05815d1651f7124a25fc5a8)[0m
+Redirected to https://hugs-marketplace.s3.ap-southeast-2.amazonaws.com/rhuKQRwSYyNkMmZfKJH26UMR?response-content-disposition=inline%3B%20filename%3D%22face-picture-high.jpg%22%3B%20filename%2A%3DUTF-8%27%27face-picture-high.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQI2DCBW2K3ANTOJC%2F20200523%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20200523T053718Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=19c1291aee165cb5537727b074a36c9bb015974ee05815d1651f7124a25fc5a8
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/profiles" for ::1 at 2020-05-23 15:37:21 +1000
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:80
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:83
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:89
+  [1m[36mBlocklist Load (0.3ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1[0m  [["blocked_id", 1]]
+  ↳ app/controllers/profiles_controller.rb:90
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" NOT IN ($1, $2)[0m  [["user_id", 2], ["user_id", 1]]
+  ↳ app/views/profiles/index.html.erb:15
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/profiles/index.html.erb:24
+  Rendered profiles/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_account_bar.html.erb (1.3ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 41ms (Views: 31.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/conversations" for ::1 at 2020-05-23 15:37:23 +1000
+Processing by ConversationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering conversations/index.html.erb within layouts/application
+  [1m[36mConversation Load (1.0ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE (sender_id = 1 OR receiver_id = 1)[0m
+  ↳ app/views/conversations/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/conversation.rb:13
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/conversations/index.html.erb:6
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "messages" WHERE "messages"."conversation_id" = $1 AND (user_id != 1 AND read = FALSE)[0m  [["conversation_id", 1]]
+  ↳ app/models/conversation.rb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/conversation.rb:13
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/conversations/index.html.erb:6
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "messages" WHERE "messages"."conversation_id" = $1 AND (user_id != 1 AND read = FALSE)[0m  [["conversation_id", 2]]
+  ↳ app/models/conversation.rb:17
+  Rendered conversations/index.html.erb within layouts/application (28.3ms)
+  Rendered layouts/_account_bar.html.erb (0.7ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 67ms (Views: 51.4ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/conversations/2/messages" for ::1 at 2020-05-23 15:37:25 +1000
+Processing by MessagesController#index as HTML
+  Parameters: {"conversation_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mConversation Load (0.3ms)[0m  [1m[34mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:5
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:7
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:7
+  [1m[36mBlocklist Load (0.2ms)[0m  [1m[34mSELECT "blocklists".* FROM "blocklists" WHERE "blocklists"."blocked_id" = $1 AND "blocklists"."user_id" = $2[0m  [["blocked_id", 1], ["user_id", 3]]
+  ↳ app/controllers/messages_controller.rb:35
+  [1m[36mMessage Update All (0.2ms)[0m  [1m[33mUPDATE "messages" SET "read" = TRUE WHERE "messages"."conversation_id" = $1 AND (user_id != 1 AND read = FALSE)[0m  [["conversation_id", 2]]
+  ↳ app/controllers/messages_controller.rb:14
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = $1[0m  [["conversation_id", 2]]
+  ↳ app/views/messages/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/index.html.erb:12
+  Rendered messages/index.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_account_bar.html.erb (1.1ms)
+  Rendered layouts/_nav_bar.html.erb (0.7ms)
+Completed 200 OK in 51ms (Views: 32.9ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-05-23 15:37:32 +1000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ATDwdglnWTgAgfrwACXOEro6JsMOaRyHpJNlpZC5jjEv4n0QIz+enbIpJmrSSoS3+SC9w60Sebo/311TYz7uow=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/evelyn/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-23 15:37:32 +1000
+Processing by ProfilesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-23 15:37:32 +1000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_account_bar.html.erb (1.1ms)
+Completed 200 OK in 32ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-05-23 15:37:48 +1000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_account_bar.html.erb (0.6ms)
+Completed 200 OK in 32ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
