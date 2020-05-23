@@ -68,6 +68,8 @@ The high level components required for this app are:
 - **Searching, sorting and/or filtering capability** based on user profile data and geocoding services. 
 - **Storing an image component** for each user (profile picture)
 
+[...](#documentation)
+
 ---
 
 ### Third party services
@@ -83,7 +85,7 @@ The high level components required for this app are:
 <!-- #TODO Doc: Describe usage of S3 Bucket -->
 
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 ---
 
@@ -101,7 +103,7 @@ The data base ERD consists of three main model/data areas. Each of these areas r
 
 Data pertaining to the application is stored within two datasources. These are Postgresql tables and an external data storage source (AWS S3 data bucket). All data tables and fields within the Database ERD are to be assumed to be stored locally by Posetgresql, with the exception of the AWS table.
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 ----
 
@@ -125,7 +127,7 @@ It also is referenced by the messages model to effectively disable their ability
 
 In the UI of the application, the only user who can view a blocklist entry is the user who requested it. This allows for a user to destroy the entry and 'unblock' the formerly blocked user.
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 ----
 
@@ -151,13 +153,13 @@ The 'distance_to' query method of the geocoder gem allows a profile to self refe
 
 The 'near' query method enables the Profile model to self reference itself and provide a list of other profiles within a given range. This enables the UI functionality of users to search profiles based on distance.
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 ----
 
 #### Hug Model and Data
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 ----
 
@@ -190,7 +192,7 @@ Each message contains a body of text stored in the *body* field that makes up th
 
 Each message also has a boolean value stored in the *read* field. By default this field is set to 'false'. When the user in the conversation who did not create the message accesses the message for the first time, this flag is then changed by the model to 'true'. The conversation model accesses this value and counts the number of messages that have a 'false' value. This count is then displayed in the UI next to the display name of the user in the list of conversation.
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 
 
@@ -203,19 +205,19 @@ Each message also has a boolean value stored in the *read* field. By default thi
 
 ![This is an image of your user stories](This is the relative path to it)
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 ---
 
 ### User Stories
 
 <!-- #TODO Doc: 5 User Stories -->
-![This is an image of your user stories](This is the relative path to it)
+![This is an image of your schema implementation](This is the relative path to it)
 
 * You also just use normal markdown to describe them
 * User stories are well thought out, relevant, and comprehensively cover the needs of the app
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 ---
 
@@ -230,7 +232,7 @@ Each message also has a boolean value stored in the *read* field. By default thi
 
 * More than five detailed and well designed wireframes provided, for several different screen sizes (as required for the app)
 
-[...](#hugs-market-place)
+[...](#documentation)
 
 ---
 
@@ -256,4 +258,4 @@ Addtional planning 'on the fly' was carried out using a whiteboard next to my de
 ![Task planning on whiteboard](/docs/whiteboard.jpg)  
 ***A white board was used to list priorities and map out flow of the application***
 
-[...](#hugs-market-place)
+[...](#documentation)
