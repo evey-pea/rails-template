@@ -10,6 +10,8 @@
 <p>
   <%= @profile.description %>
 </p>
+<h4>Hug Types</h4>
+<%= @profile_hugs %>
 <% if @profile.id == current_user["id"] %>
   <p>
     <strong>Name first:</strong>
