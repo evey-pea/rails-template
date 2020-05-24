@@ -1,4 +1,4 @@
-<%= form_with(model: profile, local: true) do |form| %>
+<%= form_with(model: @profile, local: true) do |form| %>
   <% if profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -27,12 +27,7 @@
     <%= form.text_area :description %>
   </div>
   <div class="field">
-    <%=hidden_field_tag 'profile[huglist_id][]', nil %>
-    <% Huglist.all.each do |hug| %>
-      <%= check_box_tag 'profile[huglist_id][]', hug.id, profile.huglist_ids.include?(hug.id) %>
-      <%= hug["hugtype"] %>
-      <br>
-    <% end %>
+    <%= form.collection_check_boxes :huglist_ids,  Huglist.all, :id, :hugtype %>
   </div>
   <div class="field">
     <%= form.label :name_first, "First name" %>
