@@ -60,6 +60,21 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def search_hug_id
+    @search_heading = "Search by Hug Type"
+    p search_params
+  end
+
+  def search_best_match
+    @search_heading = "Find your best matching fellow huggers"
+    p search_params
+  end
+
+  def search_nearby
+    @search_heading = "Search Nearby"
+    p search_params
+  end
+
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
@@ -111,6 +126,9 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:user_id,  :name_first, :name_second, :name_display, :description, :picture, :street_number, :road, :suburb, :city, :state, :postcode, :country, huglist_ids:[] )
   end
 
-  # Only allow a list of trusted parameters through for h model.
+  # Only allow a list of trusted parameters through for search
+  def search_params
+
+  end
 
 end

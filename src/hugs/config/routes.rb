@@ -1,15 +1,23 @@
 Rails.application.routes.draw do
-  resources :profiles
-  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  # Routing resources for authenthentication controller
+  devise_for :users
+
+  # Default routing
   root to: "profiles#index"
 
-  
-  # user internal messaging routes
-  get 'messages/index'
-  get 'conversations/index'
+  # Profiles controller routing
+  # Default profiles controller routing
+  resources :profiles
+  # Extended routing for profiles controller: search capability
+  get "/search", to: "profiles#search_hug_id", as: "search_hug_id"
+  get "/search/best_match", to: "profiles#search_best_match", as: "search_best_match"
+  get "/search/nearby", to: "profiles#search_nearby", as: "search_nearby"
 
+  # user internal messaging routes
+  get "messages/index"
+  get "conversations/index"
   resources :conversations, only: [:index, :create] do
     resources :messages, only: [:index, :create]
   end
