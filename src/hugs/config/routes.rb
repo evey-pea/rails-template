@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   # Default profiles controller routing
   resources :profiles
   # Extended routing for profiles controller: search capability
-  get "/search", to: "profiles#search_hug_id", as: "search_hug_id"
   get "/search/best_match", to: "profiles#search_best_match", as: "search_best_match"
   get "/search/nearby", to: "profiles#search_nearby", as: "search_nearby"
 

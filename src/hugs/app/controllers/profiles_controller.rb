@@ -60,19 +60,19 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def search_hug_id
-    @search_heading = "Search by Hug Type"
-    p search_params
-  end
-
   def search_best_match
     @search_heading = "Find your best matching fellow huggers"
-    p search_params
+    puts "user.profile.id: #{current_user.profile.id}"
+    @hugs = find_hug_matches(current_user.profile.id)
+    @matched_hugs = group_hugs(@hugs[1])
+    @matchlist = verbose_hugs(@matched_hugs)
+    @search_results = hug_score_sort(@matched_hugs)
+    @profiles = profile_results(@search_results)
   end
 
   def search_nearby
     @search_heading = "Search Nearby"
-    p search_params
+    # @search_results =
   end
 
   # DELETE /profiles/1
@@ -120,15 +120,89 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
   end
 
+  # Search functions
+  # Returns hugs of 0: nominated profile , 1: userhugs (profile, huglist_id) that match hugs in '0'
+  def find_hug_matches(profile_id)
+    # Find hugs of a nominated profile
+    profile_hugs = Profile.find(profile_id).huglists.pluck(:huglist_id)
+    # Return an array of userhugs that match the nominated profile
+    other_hugs = Userhug.where(huglist_id: profile_hugs).where.not(profile_id: current_user.profile.id).all.pluck(:profile_id, :huglist_id)
+    return [profile_hugs, other_hugs]
+  end
+
+  
+
+  def group_hugs(other_hugs)
+    profile_list = {}
+    other_hugs.each do |id, hug|
+      # Checks if profile is already a key
+      if profile_list.key?(id)
+        # if true, adds hug to array
+        profile_list[id].push(hug)
+      else
+        # if false, creates new key with hug in array as value
+        profile_list[id] = [hug]
+      end
+    end
+    p profile_list
+    return profile_list
+  end
+
+  # returns array of pairs (profile_id, hug score) sorted by scores desc
+  def hug_score_sort(group_hugs)
+    scoring = []
+    group_hugs.each do |profile, huglist|
+      scoring.push([profile, huglist.count])
+    end
+    scoring = scoring.sort_by { |profile, score| score }
+    return scoring.reverse
+  end
+
+  def profile_results(hug_score_sort)
+    # Determine profiles and order
+    profile_ids_required = []
+    hug_score_sort.each do |profile, score|
+      profile_ids_required.push(profile)
+    end
+    # Retrieve profiles
+    profile_data = Profile.where(id: profile_ids_required)
+    # Shuffle profiles into order by score
+    profiles_sorted = []
+    profile_ids_required.each do |order_id|
+      profile_data.each do |profile|
+        if order_id == profile[:id]
+          profiles_sorted.push(profile)
+        end
+      end
+    end
+    return profiles_sorted
+  end
+
+  # Changes matched hugs from hugtype_ids to hugtypes
+  def verbose_hugs(matched_hugs)
+    huglist_ref = Huglist.all.pluck(:id, :hugtype)
+    output = {}
+    matched_hugs.each_pair { |profile, hugs|
+      hug_names = []
+      for hug in hugs do
+        for hugtype in huglist_ref do
+          if hugtype[0] == hug
+            hug_names.push(hugtype[1])
+          end
+        end
+      end
+      output[profile] = hug_names
+    }
+    return output
+  end
+
   # Only allow a list of trusted parameters through for profile model.
   def profile_params
     p " huglist passed through params #{params[:huglists]}"
-    params.require(:profile).permit(:user_id,  :name_first, :name_second, :name_display, :description, :picture, :street_number, :road, :suburb, :city, :state, :postcode, :country, huglist_ids:[] )
+    params.require(:profile).permit(:user_id, :name_first, :name_second, :name_display, :description, :picture, :street_number, :road, :suburb, :city, :state, :postcode, :country, huglist_ids: [])
   end
 
   # Only allow a list of trusted parameters through for search
   def search_params
-
   end
-
 end
