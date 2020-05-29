@@ -8,9 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <h1>Hugs for everyone!</h1>
     <%= render 'layouts/account_bar' %>
     <% if user_signed_in? %>
+    <h1>Hugs for everyone!</h1>
       <%= render 'layouts/nav_bar' %>
     <% end %>
     <%= yield %>

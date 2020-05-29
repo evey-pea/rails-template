@@ -1,6 +1,6 @@
-<%# #TODO Search: Display results in partial %>
-<h3>Search results</h3>
-<%= @profiles %>
+<h2><%= @search_result_heading %></h2>
+
+<% if @show_table %>
 <table>
   <thead>
     <tr>
@@ -48,3 +48,4 @@
   <% end %>
 </tbody>
 </table>
+<% end %>

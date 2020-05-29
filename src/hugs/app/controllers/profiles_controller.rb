@@ -70,17 +70,20 @@ class ProfilesController < ApplicationController
     @matchlist = verbose_hugs(@matched_hugs)
     @search_results = hug_score_sort(@matched_hugs)
     @profiles = profile_results(@search_results)
-    puts @profiles.to_s
+    @show_table = true
   end
 
   def search_nearby
     @search_heading = "Search Nearby"
-    # @search_results = []
-    puts "Back in  'search_nearby'..."
-    @results2 = find_near_profile(@profile, search_params[:range])
-    p "In search_nearby, @profiles : "
-    puts @results2.length
-    
+    p @range = search_params[:range].to_i
+    if @range != nil
+      @profiles = find_near_profile(@profile, search_params[:range])
+      @search_result_heading = "Search results within #{@range} km"
+      @show_table = true
+    else
+      @search_result_heading = "No results"
+      @show_table =false
+    end
   end
 
   # DELETE /profiles/1
