@@ -4,7 +4,7 @@
 
 | Description                               | Link                                                                              |
 | :---------------------------------------- | :-------------------------------------------------------------------------------- |
-| Link to the deployed app:                 | TBA                                                                               |
+| Link to the deployed app:                 | https://calm-atoll-06372.herokuapp.com/                                                                  |
 | Link to github repo:                      | https://github.com/evey-pea/hugs.git                                              |
 | Planning of Build and Assesment Criteria: | [PLANNING.md](https://github.com/evey-pea/rails-template/blob/master/PLANNING.md) |
 
