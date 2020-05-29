@@ -1,10 +1,12 @@
 class ProfilesController < ApplicationController
+  respond_to :html, :js
   before_action :authenticate_user!
-  before_action :set_user_profile, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_user_profile, only: [:index, :show, :edit, :search_nearby, :update, :destroy]
   before_action :set_user_id, only: [:new, :edit]
   before_action :set_profile, only: [:show]
   before_action :profile_distance, only: [:show]
-  before_action :set_block_lists, only: [:index]
+  before_action :set_block_lists, only: [:index, :search_best_match, :search_nearby]
+  before_action :search_params, only: [:search_nearby]
 
   # GET /profiles
   # GET /profiles.json
@@ -68,11 +70,17 @@ class ProfilesController < ApplicationController
     @matchlist = verbose_hugs(@matched_hugs)
     @search_results = hug_score_sort(@matched_hugs)
     @profiles = profile_results(@search_results)
+    puts @profiles.to_s
   end
 
   def search_nearby
     @search_heading = "Search Nearby"
-    # @search_results =
+    # @search_results = []
+    puts "Back in  'search_nearby'..."
+    @results2 = find_near_profile(@profile, search_params[:range])
+    p "In search_nearby, @profiles : "
+    puts @results2.length
+    
   end
 
   # DELETE /profiles/1
@@ -103,8 +111,8 @@ class ProfilesController < ApplicationController
 
   # Build blocklist to prevent users being seen by current_user
   def set_block_lists
-    p @blocked_list = Blocklist.where(user_id: current_user.id).to_a.pluck(:blocked_id)
-    p @blocked_by_list = Blocklist.where(blocked_id: current_user.id).to_a.pluck(:user_id)
+    @blocked_list = Blocklist.where(user_id: current_user.id).to_a.pluck(:blocked_id)
+    @blocked_by_list = Blocklist.where(blocked_id: current_user.id).to_a.pluck(:user_id)
   end
 
   def profile_coords(profile)
@@ -126,11 +134,9 @@ class ProfilesController < ApplicationController
     # Find hugs of a nominated profile
     profile_hugs = Profile.find(profile_id).huglists.pluck(:huglist_id)
     # Return an array of userhugs that match the nominated profile
-    other_hugs = Userhug.where(huglist_id: profile_hugs).where.not(profile_id: current_user.profile.id).all.pluck(:profile_id, :huglist_id)
+    other_hugs = Userhug.where(huglist_id: profile_hugs).where.not(profile_id: current_user.profile.id).where.not(profile_id: @blocked_list).all.pluck(:profile_id, :huglist_id)
     return [profile_hugs, other_hugs]
   end
-
-  
 
   def group_hugs(other_hugs)
     profile_list = {}
@@ -144,7 +150,7 @@ class ProfilesController < ApplicationController
         profile_list[id] = [hug]
       end
     end
-    p profile_list
+    profile_list
     return profile_list
   end
 
@@ -175,6 +181,8 @@ class ProfilesController < ApplicationController
         end
       end
     end
+    puts "profiles_sorted :"
+    p profiles_sorted
     return profiles_sorted
   end
 
@@ -184,8 +192,8 @@ class ProfilesController < ApplicationController
     output = {}
     matched_hugs.each_pair { |profile, hugs|
       hug_names = []
-      for hug in hugs do
-        for hugtype in huglist_ref do
+      for hug in hugs
+        for hugtype in huglist_ref
           if hugtype[0] == hug
             hug_names.push(hugtype[1])
           end
@@ -196,13 +204,47 @@ class ProfilesController < ApplicationController
     return output
   end
 
+  # find all profiles within range of user profile, ordered by distance asc
+  def find_near_profile(profile, range)
+    # Use Profile.near method provided by Geocoder gem to search for nearest profiles within rang
+    results = profile.nearbys(range, units: :km).where.not(user_id: current_user.profile.id).where.not(user_id: @blocked_list)
+
+    # Determine profiles and order
+    list = []
+    results.each do |result|
+      result[:id]
+      list.push(result[:id])
+    end
+    p "'list' : #{list}"
+
+    # Retrieve profiles
+    profile_data = Profile.all.where(id: list)
+    profiles_sorted = []
+    puts "profile_data.each loop..."
+    list.each do |order_id|
+      profile_data.each do |entry|
+        if order_id == entry["id"]
+          p entry
+          profiles_sorted.push(entry)
+        end
+      end
+    end
+
+    # Debugging server output
+    puts ""
+    # puts "'profiles_sorted' from 'find_near_profile' : "
+    # p profiles_sorted
+
+    return profiles_sorted
+  end
+
   # Only allow a list of trusted parameters through for profile model.
   def profile_params
-    p " huglist passed through params #{params[:huglists]}"
     params.require(:profile).permit(:user_id, :name_first, :name_second, :name_display, :description, :picture, :street_number, :road, :suburb, :city, :state, :postcode, :country, huglist_ids: [])
   end
 
   # Only allow a list of trusted parameters through for search
   def search_params
+    params.permit(:range, :commit, :utf8)
   end
 end
