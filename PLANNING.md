@@ -11,7 +11,7 @@ Each time you have completed a requirement check it off the list. This way it wi
 - [x] 2. Use Postgresql database in development and production.
 - [x] 3. My app has authentication (eg. Devise).
 - [x] 4. My app has authorisation (i.e. users have restrictions on what they can see and edit).
-- [ ] 5. My app has some type of file (eg. images) uploading capability.
+- [x] 5. My app has some type of file (eg. images) uploading capability.
 - [ ] 6. My app is deployed to Heroku (recommended) or AWS.
 - [x] 7. I have identified the problem I am trying to solve by building this particular marketplace app.
 - [x] 8. I have explained why is it a problem that needs solving.

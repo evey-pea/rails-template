@@ -1,0 +1,9 @@
+<h1><%= @search_heading %></h1>
+
+<%= form_with(url: search_nearby_path, method: "get", local: true) do %>
+  <%= label_tag :range, "Search for profiles within km:" %>
+  <%= number_field_tag :range, '', :required => true %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<%= render 'search_results'%>
