@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user_profile, only: [:index, :show, :edit, :search_nearby, :update, :destroy]
   before_action :set_user_id, only: [:new, :edit]
+  before_action :list_hugs, only: [:new, :edit]
   before_action :set_profile, only: [:show]
   before_action :profile_distance, only: [:show]
   before_action :set_block_lists, only: [:index, :search_best_match, :search_nearby]
@@ -82,7 +83,7 @@ class ProfilesController < ApplicationController
       @show_table = true
     else
       @search_result_heading = "No results"
-      @show_table =false
+      @show_table = false
     end
   end
 
@@ -116,6 +117,10 @@ class ProfilesController < ApplicationController
   def set_block_lists
     @blocked_list = Blocklist.where(user_id: current_user.id).to_a.pluck(:blocked_id)
     @blocked_by_list = Blocklist.where(blocked_id: current_user.id).to_a.pluck(:user_id)
+  end
+
+  def list_hugs
+    @hugtype_list = Huglist.all
   end
 
   def profile_coords(profile)

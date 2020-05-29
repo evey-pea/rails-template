@@ -27,7 +27,7 @@
     <%= form.text_area :description %>
   </div>
   <div class="field">
-    <%= form.collection_check_boxes :huglist_ids,  Huglist.all, :id, :hugtype %>
+    <%= form.collection_check_boxes :huglist_ids, @hugtype_list, :id, :hugtype %>
   </div>
   <div class="field">
     <%= form.label :name_first, "First name" %>
