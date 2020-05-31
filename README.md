@@ -4,7 +4,7 @@
 
 | Description                               | Link                                                                              |
 | :---------------------------------------- | :-------------------------------------------------------------------------------- |
-| Link to the deployed app:                 | https://calm-atoll-06372.herokuapp.com/                                                                  |
+| Link to the deployed app:                 | https://calm-atoll-06372.herokuapp.com/                                           |
 | Link to github repo:                      | https://github.com/evey-pea/hugs.git                                              |
 | Planning of Build and Assesment Criteria: | [PLANNING.md](https://github.com/evey-pea/rails-template/blob/master/PLANNING.md) |
 
@@ -78,13 +78,83 @@ The high level components required for this app are:
 
 #### Geocoding Services: Google Maps API with Geocoder Rails Gem
 
-<!-- #TODO Doc: Describe usage of Google Maps API using Geocoder gem-->
+The goecoding of the application is handled by the Geocoder gem which sources its data from the Google Maps API. Only the minimal options are set for use within the Geocoder configuration file ```config/initializers/geocoder.rb```
+
+```ruby
+Geocoder.configure(
+  # Geocoding options
+  # timeout: 3,                 # geocoding service timeout (secs)
+   lookup: :google,         # name of geocoding service (symbol)
+  # ip_lookup: :ipinfo_io,      # name of IP address geocoding service (symbol)
+  # language: :en,              # ISO-639 language code
+  # use_https: false,           # use HTTPS for lookup requests? (if supported)
+  # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
+  # https_proxy: nil,           # HTTPS proxy server (user:pass@host:port)
+  # api_key: nil,               # API key for geocoding service
+  # cache: nil,                 # cache object (must respond to #[], #[]=, and #del)
+  # cache_prefix: 'geocoder:',  # prefix (string) to use for all cache keys
+
+  # Exceptions that should not be rescued by default
+  # (if you want to implement custom error handling);
+  # supports SocketError and Timeout::Error
+  # always_raise: [],
+
+  # Calculation options
+  units: :km,                 # :km for kilometers or :mi for miles
+  distances: :linear          # :spherical or :linear
+)
+```
+No API key has been provided for the Geocoder gem as it is only required with request rate above 50 per minute and/or with requests requiring SSL connections.
+
+The requests to the Google Maps API are only made when the data in the address fields in the user's profile is updated as per the settings in the profile model confirguration below:
+
+```ruby
+class Profile < ApplicationRecord
+  belongs_to :user
+  ....
+  geocoded_by :address
+
+  after_validation :geocode
+  
+  validates :name_display, :name_first, :name_second, :road, :suburb, :state, :postcode, presence: true
+
+  def address
+    [road, suburb, city, postcode, state, country].compact.join(", ")
+  end
+  
+end
+```
+All spatial calculations are made by the geodcoder gem within the application itself, including the 'search nearby' function for the application. For this it requires only the latitude and longitude values from the profile table.
+
+This reduces the rate of the required Google Maps API requests, negating the need for an API key and SSL connection.
 
 #### Image content storage: Amazon S3 Bucket
 
-<!-- #TODO Doc: Describe usage of S3 Bucket -->
+The profile images attached to each profile are stored on the Amazon S3 Bucket service.
 
+This is configured to use the encrypted rails credentials to access the bucket. When deployed, the secret key for the encryption is given to the server, not the apllication, as a machine environment variable. This prevents the keys from becoming publicaly known.
 
+```yml
+# Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
+amazon:
+  service: S3
+  access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+  secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+  region: ap-southeast-2
+  bucket: hugs-marketplace
+```
+
+The image is not recorded in the database of the application, but rather it is managed by the Active Storage module of Rails. This is set in the file environment files (```developement.rb``` and ```production.rb```) in the ```config/environment/``` directory with the below code:
+
+```ruby
+  # Store uploaded files on the local file system (see config/storage.yml for options)
+  config.active_storage.service = :amazon
+```
+The image is attached to the profile model file ```app/model/profile.rb``` with the following parameters:
+
+```ruby
+ has_one_attached :picture
+```
 [...](#documentation)
 
 ---
@@ -203,7 +273,7 @@ Each message also has a boolean value stored in the *read* field. By default thi
 
 #### Schema Implementation
 
-![This is an image of your user stories](This is the relative path to it)
+![Schema Representation from Dbeaver application](/docs/hugs_schema.png)
 
 [...](#documentation)
 
@@ -212,7 +282,6 @@ Each message also has a boolean value stored in the *read* field. By default thi
 ### User Stories
 
 <!-- #TODO Doc: 5 User Stories -->
-![This is an image of your schema implementation](This is the relative path to it)
 
 * You also just use normal markdown to describe them
 * User stories are well thought out, relevant, and comprehensively cover the needs of the app

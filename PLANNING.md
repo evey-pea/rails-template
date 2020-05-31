@@ -12,10 +12,10 @@ Each time you have completed a requirement check it off the list. This way it wi
 - [x] 3. My app has authentication (eg. Devise).
 - [x] 4. My app has authorisation (i.e. users have restrictions on what they can see and edit).
 - [x] 5. My app has some type of file (eg. images) uploading capability.
-- [ ] 6. My app is deployed to Heroku (recommended) or AWS.
+- [x] 6. My app is deployed to Heroku (recommended) or AWS.
 - [x] 7. I have identified the problem I am trying to solve by building this particular marketplace app.
 - [x] 8. I have explained why is it a problem that needs solving.
-- [ ] 9. I have provided a link (URL) to my deployed app (i.e. website)
+- [x] 9. I have provided a link (URL) to my deployed app (i.e. website)
 - [x] 10. I have provided a link to my GitHub repository (repo). I have ensured the repo is accessible by my Educators.
 - [ ] 11. I have a complete description of my marketplace app (website), including:  
   - [x] 11.1 Purpose  
@@ -29,7 +29,7 @@ Each time you have completed a requirement check it off the list. This way it wi
 - [ ] 13. I have provided Wire-Frames for my app 
 - [x] 14. I have provided an ERD for my app
 - [x] 15. I have explained the different high-level components (abstractions) in my app
-- [ ] 16. I have listed and described any third party services that your app will use
+- [x] 16. I have listed and described any third party services that your app will use
 - [x] 17. I have described my projects models in terms of the relationships (active record associations) they have with each other.
 - [x] 18. I have discussed the database relations to be implemented in my application
 - [x] 19. I have provided my database schema design
