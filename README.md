@@ -229,6 +229,8 @@ The 'near' query method enables the Profile model to self reference itself and p
 
 #### Hug Model and Data
 
+<!-- #TODO Hug and Model Data -->
+
 [...](#documentation)
 
 ----
@@ -292,14 +294,25 @@ Each message also has a boolean value stored in the *read* field. By default thi
 
 ### UI Wireframes
 
-<!-- #TODO -Doc: 5 (min) Wireframes -->
-![This is an image of your wire frames](This is the relative path to it)  
-![This is an image of your wire frames](This is the relative path to it)  
-![This is an image of your wire frames](This is the relative path to it)  
-![This is an image of your wire frames](This is the relative path to it)  
-![This is an image of your wire frames](This is the relative path to it)  
 
-* More than five detailed and well designed wireframes provided, for several different screen sizes (as required for the app)
+![Wireframe of profile index, default layout for Profiles and Best match](/docs/Wireframes_Profiles.png)
+*Wireframe of profile index, default layout for Profiles and Best match*
+
+![Wireframe of distance based search](/docs/Wireframes_Distance_Search.png)
+*Wireframe of distance based search*
+
+![Wireframe of individual profile](/docs/Wireframes_Show_Profile.png)
+*Wireframe of individual profile*
+
+![Wireframe of blocked list](/docs/Wireframe_Blocked.png)
+*Wireframe of blocked list*
+
+![Wireframe of conversations (message index)](/docs/Wireframes_Conversation.png)
+*Wireframe of conversations (message index)*
+
+![Wireframe of conversation between users](/docs/Wireframes_Messages.png)
+*Wireframe of conversation between users*
+
 
 [...](#documentation)
 
